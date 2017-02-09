@@ -1,44 +1,35 @@
-import {Injectable} from '@angular/core';
-import {Contact} from "./concat";
-import {Observable} from "rxjs";
-import {Response} from "@angular/http";
+import { Injectable } from '@angular/core';
 
+export class Contact {
+  constructor(public id: number, public name: string) { }
+}
+
+const CONTACTS: Contact[] = [
+  new Contact(21, 'Sam Spade'),
+  new Contact(22, 'Nick Danger'),
+  new Contact(23, 'Nancy Drew')
+];
 
 const FETCH_LATENCY = 500;
 
 @Injectable()
 export class ContactService {
-    private  CONTACTS: Contact[] = [
-        {id: 21, name: 'viola'},
-        {id: 22, name: 'maldini'},
-        {id: 23, name: 'nesta'},
-    ];
 
-    constructor() {
+  getContacts() {
+    return new Promise<Contact[]>(resolve => {
+      setTimeout(() => { resolve(CONTACTS); }, FETCH_LATENCY);
+    });
+  }
 
-            console.log(2);
-
-    }
-
-    getContacts(): Observable<Array<Contact>> {
-        return Observable.of(this.CONTACTS)
-            .do((data) => {
-                console.log(data);
-            })
-            .delay(500);
-    }
-
-    getContact(id: number|string) {
-
-        return Observable.of(this.CONTACTS);
-
-/*     .filter((item) =>
- {
- return 1;
- }
- )*/
-
-
-    }
-
+  getContact(id: number | string) {
+    return this.getContacts()
+      .then(heroes => heroes.find(hero => hero.id === +id));
+  }
 }
+
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
