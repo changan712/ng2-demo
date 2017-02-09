@@ -1,0 +1,54 @@
+
+ul{
+  display:flex;
+  flex-wrap:wrap;
+  position:relative;
+  background:#fcfcfc;
+  &:after{
+    content:' ';
+    display:block;
+    position:absolute;
+    left:0;
+    right:0;
+    height:1px;
+    background:#ddd;
+    bottom:0;
+  }
+
+  &:before{
+    content:' ';
+    display:block;
+    position:absolute;
+    left:0;
+    right:0;
+    height:1px;
+    background:#ddd;
+    top:0;
+  }
+
+  li{
+    background:#fff;
+    height:80px;
+    flex:0 0 25%;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    justify-content:center;
+
+    border:{
+      right:1px solid #ddd;
+      bottom:1px solid #ddd;
+    }
+    &:nth-child(4n){
+      border-right:none;
+    }
+    &:first-child, &:nth-child(5n){
+      border-left:none;
+    }
+
+    ion-icon{
+      font-size:30px;
+    }
+  }
+}
+

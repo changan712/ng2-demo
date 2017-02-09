@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://super.tds.hrtps.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

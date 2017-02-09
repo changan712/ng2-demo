@@ -1,0 +1,17 @@
+
+.view-tab {
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    flex: 1;
+  }
+
+  nav {
+    [md-tab-link]{
+      flex: 1;
+    }
+  }
+
+}
+
