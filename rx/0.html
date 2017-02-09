@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0</title>
+    <script src="rx.all.js"></script>
+</head>
+<body>
+<div id="clock"></div>
+</body>
+</html>
+<script>
+  
+    
+    Rx.Observable.of(1,2,3).toArray().subscribe(function (d) {
+        console.log(d);
+        
+    });
+
+
+    Rx.Observable.from([11,22,33]).toArray().subscribe(function (d) {
+        console.log(d);
+    })
+
+
+</script>

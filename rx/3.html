@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rx</title>
+    <script src="rx.all.js"></script>
+</head>
+<body>
+<div id="clock"></div>
+</body>
+</html>
+<script>
+
+    ///////////////////////
+    let elClock = document.getElementById("clock");
+    let getTime = function () {
+        let _ = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09'],  //补零
+            d = new Date(), h = d.getHours(), m = d.getMinutes(), s = d.getSeconds();
+        return [_[h] || h, _[m] || m, _[s] || s].join(":");
+    };
+
+    let tickStream = Rx.Observable.create(
+        //generator
+        function (observer) {
+            setInterval(function () {
+                observer.onNext(getTime());
+            }, 1000);
+        });
+
+    let uiRefresher = Rx.Observer.create(
+        //consumer
+        function next(data) {
+            elClock.textContent = data;
+        },
+        function error(err) {
+            //do some error handling
+        },
+        function completed() {
+            //do some cleaning
+        }
+    );
+    tickStream.subscribe(uiRefresher);
+
+</script>

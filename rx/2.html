@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>观测者模式</title>
+    <script src="rx.all.js"></script>
+</head>
+<body>
+<div id="clock"></div>
+</body>
+</html>
+<script>
+    //Observer
+    let Observer = function (consumer) {
+        this._cosumer = consumer;
+    };
+
+    Observer.prototype.onNotify = function (data) {
+        this._cosumer.call(this, data);
+    };
+
+    //Observable
+    let Observable = function (generator) {
+        this._generator = generator;
+    };
+
+    Observable.prototype.subscribe = function (observer) {
+        this._generator.call(this, observer)
+    };
+
+    ///////////////////////
+    let elClock = document.getElementById("clock");
+    let getTime = function () {
+        let _ = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09'],  //补零
+            d = new Date(), h = d.getHours(), m = d.getMinutes(), s = d.getSeconds();
+        return [_[h] || h, _[m] || m, _[s] || s].join(":");
+    };
+
+    let tickStream = new Observable(function (observer) {
+        setInterval(function () {
+            observer.onNotify(getTime())
+        });
+        }, 1000)
+
+    let uiRefresher = new Observer(function(data){
+        elClock.textContent = data;
+    });
+    tickStream.subscribe(uiRefresher);
+
+</script>

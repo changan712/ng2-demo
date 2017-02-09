@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rx 简写</title>
+    <script src="rx.all.js"></script>
+</head>
+<body>
+<div id="clock"></div>
+</body>
+</html>
+<script>
+
+    let elClock = document.getElementById("clock");
+    Rx.Observable.create(function (observer) {
+        let i = 10;
+        let timer = setInterval(function () {
+            observer.onNext(i--);
+            if (i < 0) {
+                observer.onCompleted();
+                clearInterval(timer);
+            }
+        }, 1000);
+    })
+    //链式调用 subscribe 中直接传入函数，rx 或自动生成一个匿名的observer;
+        .subscribe(
+            function (data) {
+                elClock.textContent = data;
+            },
+            function (err) {
+            },
+            function () {
+               alert('onCompleted')
+            });
+
+</script>

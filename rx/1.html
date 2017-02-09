@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <script src="rx.all.js"></script>
+</head>
+<body>
+<div id="clock"></div>
+</body>
+</html>
+<script>
+    let elClock = document.getElementById("clock");
+    let getTime =  function(){
+        let _ = ['00','01','02','03','04','05','06','07','08','09'],  //补零
+            d = new Date(), h = d.getHours(),m = d.getMinutes(),s = d.getSeconds();
+        return [_[h]||h,_[m]||m,_[s]||s].join(":");
+    };
+    setInterval(function(){
+        elClock.textContent = getTime();
+    },1000);
+</script>

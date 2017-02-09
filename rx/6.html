@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>marble-diagram</title>
+    <script src="rx.all.js"></script>
+</head>
+<body>
+
+<img src="marble-diagram-1.png" alt="">
+<div id="clock"></div>
+
+<a href="http://www.hubwiz.com/class/569d92e3acf9a45a69b05154">link</a>
+</body>
+</html>
+<script>
+    let Placeholder = function (text) {
+        let el = document.createElement("div");
+        el.innerHTML = "<h1>" + text + "</h1>";
+        document.body.appendChild(el);
+    };
+
+    let TL = TimelineCanvas;
+    let tl_input = new TL("input");
+    let tx = new Placeholder("filter()");
+    let tl_output = new TL("output");
+    let timelines = [tl_input, tl_output];
+    let input = Rx.Observable.timer(0, 1000);
+    let output = input.filter(function (d) {
+        return d % 2 === 0
+    });
+    [input, output].forEach(function (s, i) {
+        s.subscribe(
+            function (d) {
+                timelines[i].next(d);
+            },
+            function (e) {
+                timelines[i].error(e);
+            },
+            function () {
+                timelines[i].completed();
+            }
+        );
+    });
+</script>
