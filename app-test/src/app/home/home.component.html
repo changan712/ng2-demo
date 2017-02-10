@@ -1,5 +1,5 @@
 <ion-content>
-    <ion-slides *ngIf="banners?.length" loop="true" pager autoplay="4000">
+    <ion-slides *ngIf="banners?.length" pager autoplay="4000">
         <ion-slide *ngFor="let item of banners">
             <img [src]="item.image" alt="">
         </ion-slide>

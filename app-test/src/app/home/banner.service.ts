@@ -11,9 +11,15 @@ export class BannerService {
     }
 
     get(): Observable<Array<any>> {
-        return this.http.get(this.url + '?corp_id=tds2in1').map(res => {
-            return res.json();
-        });
+        return this.http.get(this.url + '?corp_id=tds2in1')
+            .map(res => {
+                return res.json();
+            })
     }
+
+    handleError() {
+
+    }
+
 
 }
