@@ -26,7 +26,7 @@ export class TabComponent {
     }
 
     ngOnInit(){
-        console.log(this.url);
+
     }
 
     ionViewCanEnter() {

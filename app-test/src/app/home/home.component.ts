@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {NavController} from "ionic-angular";
+import {NavController, App} from "ionic-angular";
 import {BannerService} from "./banner.service";
 import {Observable} from "rxjs";
 import {PublicComponent} from "../public/public.component";
@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
     banners: Array<any>;
 
-    constructor(private navCtrl: NavController, private bannerSv: BannerService) {
+    constructor(private  appCtrl:App,private navCtrl: NavController, private bannerSv: BannerService) {
 
     }
 
@@ -23,8 +23,11 @@ export class HomeComponent implements OnInit {
         this.getBanners();
     }
 
-    goToPublic(){
-        this.navCtrl.push(PublicComponent);
+    goToPublic() {
+        //
+        this.appCtrl.getRootNav().push(PublicComponent);
+        //this.navCtrl.push();
+
     }
 
     getBanners() {
