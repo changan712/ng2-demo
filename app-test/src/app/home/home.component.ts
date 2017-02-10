@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {NavController} from "ionic-angular";
 import {BannerService} from "./banner.service";
 import {Observable} from "rxjs";
+import {PublicComponent} from "../public/public.component";
 
 @Component({
     selector: 'page-home',
@@ -20,6 +21,10 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         this.getBanners();
+    }
+
+    goToPublic(){
+        this.navCtrl.push(PublicComponent);
     }
 
     getBanners() {

@@ -8,24 +8,27 @@ import {CoreModule} from "./core/core.module";
 
 import './rxjs-extensions';
 import {deepLinks} from "./deepLinks";
+import { PublicComponent } from './public/public.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+
     ],
     imports: [
         BrowserModule,
         CoreModule,
         IonicModule.forRoot(AppComponent, {}, {
             links: deepLinks
-        }),
-        TabModule
+        })
+
     ],
 
     providers: [],
     bootstrap: [IonicApp],
     entryComponents: [
-        TabComponent
+        TabComponent,
+        PublicComponent,
     ]
 })
 export class AppModule {

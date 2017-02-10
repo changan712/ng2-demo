@@ -14,11 +14,13 @@ export class FeedService {
 
     index(params?): Observable<any> {
 
-        let opt = Object.assign({_page_size: this.pageSize,corpId:'tds2in1'}, params);
+        let opt = Object.assign({_page_size: this.pageSize}, params);
 
-        let _search = new URLSearchParams(opt);
+        let _search = new URLSearchParams();
 
-        _search.set('a','1');
+        for (let k in opt) {
+            _search.set(k, opt[k]);
+        }
 
         return this.http.get(this.api, {search: _search}).map((res) => {
             return res.json();

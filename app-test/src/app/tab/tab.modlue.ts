@@ -15,6 +15,7 @@ import {FeedListComponent} from "../feed/feed-list/feed-list.component";
         ShareModule,
         HomeModule,
         FeedModule,
+
     ],
     declarations: [
         TabComponent

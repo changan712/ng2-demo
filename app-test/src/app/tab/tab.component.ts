@@ -2,6 +2,8 @@ import {Component} from "@angular/core";
 import {HomeComponent} from "../home/home.component";
 import {UserService} from "../core/user.service";
 import {FeedListComponent} from "../feed/feed-list/feed-list.component";
+import {Nav, DeepLinker} from "ionic-angular";
+
 
 
 @Component({
@@ -18,11 +20,14 @@ export class TabComponent {
     root2 = FeedListComponent;
     root3 = HomeComponent;
 
-    constructor(private userSv: UserService) {
+    constructor(private userSv: UserService,private url:DeepLinker) {
 
 
     }
 
+    ngOnInit(){
+        console.log(this.url);
+    }
 
     ionViewCanEnter() {
 
