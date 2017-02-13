@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NavParams} from "ionic-angular";
 
 @Component({
-  selector: 'app-feed-detail',
-  templateUrl: './feed-detail.component.html',
-  styleUrls: ['./feed-detail.component.scss']
+    selector: 'app-feed-detail',
+    templateUrl: './feed-detail.component.html',
+    styleUrls: ['./feed-detail.component.scss']
 })
 export class FeedDetailComponent implements OnInit {
 
-  constructor() { }
+    constructor(public  navParams: NavParams) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+
+        console.log(this.navParams);
+
+    }
 
 }

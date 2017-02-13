@@ -7,6 +7,7 @@ import {TabComponent} from "./tab.component";
 import {HomeComponent} from "../home/home.component";
 import {FeedModule} from "../feed/feed.module";
 import {FeedListComponent} from "../feed/feed-list/feed-list.component";
+import {FeedDetailComponent} from "../feed/feed-detail/feed-detail.component";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {FeedListComponent} from "../feed/feed-list/feed-list.component";
     ],
     entryComponents: [
         HomeComponent,
-        FeedListComponent
+        FeedListComponent,
+        FeedDetailComponent,
     ]
 
 })
