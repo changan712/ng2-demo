@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content>
-    <app-feed *ngFor="let item  of  feeds"></app-feed>
+    <app-feed *ngFor="let item  of  feeds" (detailClicked)="goToDetail($event)" [view]="item"></app-feed>
 
 </ion-content>
 

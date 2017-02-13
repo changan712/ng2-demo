@@ -8,3 +8,42 @@
 li, ul, dl, dd{
   list-style:none;
 }
+
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+
+  background-size: cover;
+  img {
+    height: 100%;
+    min-width: 100%;
+    position: relative;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+  &.avatar-sm {
+    height: 30px;
+    width: 30px;
+  }
+
+  &.avatar-big {
+    height: 70px;
+    width: 70px;
+  }
+
+  &.avatar-xs {
+    height: 20px;
+    width: 20px;
+  }
+  &.round {
+    border-radius: 50%;
+  }
+
+}

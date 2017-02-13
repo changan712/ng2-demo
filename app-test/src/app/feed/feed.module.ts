@@ -5,6 +5,8 @@ import {FeedDetailComponent} from './feed-detail/feed-detail.component';
 import {ShareModule} from "../share/share.module";
 import {FeedComponent} from './feed/feed.component';
 import {FeedService} from "./feed.service";
+import { FeedImgGridComponent } from './feed-img-grid/feed-img-grid.component';
+import { FeedCommentComponent } from './feed-comment/feed-comment.component';
 
 
 @NgModule({
@@ -12,7 +14,7 @@ import {FeedService} from "./feed.service";
         ShareModule
     ],
     exports: [FeedListComponent],
-    declarations: [FeedListComponent, FeedDetailComponent, FeedComponent],
+    declarations: [FeedListComponent, FeedDetailComponent, FeedComponent, FeedImgGridComponent, FeedCommentComponent],
     providers: [FeedService]
 })
 export class FeedModule {

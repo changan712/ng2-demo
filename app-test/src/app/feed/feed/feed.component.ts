@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 
 @Component({
     selector: 'app-feed',
@@ -7,12 +7,23 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-    @Input() data = null;
+    @Input() view = null;
+
+
+    @Output()
+    detailClicked = new EventEmitter();
 
     constructor() {
     }
 
     ngOnInit() {
+        console.log(this.view);
+
+
+    }
+
+    starrClick() {
+        this.detailClicked.emit(this.view)
     }
 
 }

@@ -1,3 +1,17 @@
-<p>
-  feed works!
-</p>
+<section class="feed ">
+    <div class="side">
+        <a class="avatar">
+            <img [src]="view.user.avatar" alt="">
+
+        </a></div>
+
+    <div class="main">
+        <ul (click)="starrClick()">
+            <li>{{view.situation}}</li>
+            <li>{{view.action}}</li>
+            <li>{{view.result}}</li>
+            <li>{{view.reflection}}</li>
+        </ul>
+
+    </div>
+</section>
