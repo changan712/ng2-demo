@@ -12,6 +12,8 @@ export class FeedComponent implements OnInit {
     @Output()
     detailClicked = new EventEmitter();
 
+
+
     constructor() {
     }
 

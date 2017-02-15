@@ -9,41 +9,95 @@ li, ul, dl, dd{
   list-style:none;
 }
 
+.avatar{
+  height:50px;
+  width:50px;
+  overflow:hidden;
 
-.avatar {
-  height: 50px;
-  width: 50px;
-  overflow: hidden;
+  display:inline-block;
+  vertical-align:middle;
+  position:relative;
 
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
+  background-size:cover;
+  img{
+    height:100%;
+    min-width:100%;
+    position:relative;
+    left:50%;
 
-  background-size: cover;
-  img {
-    height: 100%;
-    min-width: 100%;
-    position: relative;
-    left: 50%;
-
-    transform: translateX(-50%);
+    transform:translateX(-50%);
   }
-  &.avatar-sm {
-    height: 30px;
-    width: 30px;
-  }
-
-  &.avatar-big {
-    height: 70px;
-    width: 70px;
+  &.avatar-sm{
+    height:30px;
+    width:30px;
   }
 
-  &.avatar-xs {
-    height: 20px;
-    width: 20px;
-  }
-  &.round {
-    border-radius: 50%;
+  &.avatar-big{
+    height:70px;
+    width:70px;
   }
 
+  &.avatar-xs{
+    height:20px;
+    width:20px;
+  }
+  &.round{
+    border-radius:50%;
+  }
+
+}
+
+.pull-right{
+  float:right;
+}
+
+.overflow{
+  overflow:hidden;
+}
+
+@function line($style) {
+  @if $style != ''{
+    @return '-';
+  } @else{
+    @return '';
+  }
+}
+
+$map:(none: 0, auto: auto, ii: initial, ih: inherit, xxs: 2px, xs: 5px, sm: 10px, '': 15px, md: 20px, lg: 30px, xl: 40px, xxl: 50px,
+        n-xxs: -2px, n-xs: -5px, n-sm: -10px, n: -15px, n-md: 20px, n-lg: 30px, n-xl: -40px, n-xxl: -50px);
+
+$names:(m: margin, p: padding);
+@each $n-key, $n-value in $names{
+  @each $style, $padding in $map{
+    $line:line($style);
+    .#{$n-key}#{$line}#{$style}{
+      #{$n-value}:$padding !important;
+    }
+  }
+
+  @each $style, $padding in $map{
+    $line:line($style);
+    .#{$n-key}-v#{$line}#{$style}{
+      #{$n-value}-top:$padding !important;
+      #{$n-value}-bottom:$padding !important;
+    }
+  }
+
+  @each $style, $padding in $map{
+    $line:line($style);
+    .#{$n-key}-h#{$line}#{$style}{
+      #{$n-value}-left:$padding !important;
+      #{$n-value}-right:$padding !important;
+    }
+  }
+
+  $directions:(t: top, b: bottom, l: left, r:right);
+  @each $d-key, $d-value in $directions{
+    @each $style, $padding in $map{
+      $line:line($style);
+      .#{$n-key}-#{$d-key}#{$line}#{$style}{
+        #{$n-value}-#{$d-value}:$padding !important;
+      }
+    }
+  }
 }

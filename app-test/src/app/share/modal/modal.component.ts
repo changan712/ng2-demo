@@ -12,10 +12,26 @@ export class ModalComponent implements OnInit {
     @Input()
     content: Component;
 
-    constructor(private viewCtrl: ViewController) {
-        
+    @Input()
+    okButtonText: string = '确定';
 
-        
+    @Input()
+    title: string;
+
+    @Input()
+    toolbarColor: string = 'dark';
+
+    constructor(private viewCtrl: ViewController) {
+
+
+    }
+
+    ok() {
+
+    }
+
+    cancel() {
+        this.dismiss();
     }
 
     dismiss() {
