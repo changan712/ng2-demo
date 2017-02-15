@@ -9,7 +9,6 @@ export class FeedComponent implements OnInit {
 
     @Input() view = null;
 
-
     @Output()
     detailClicked = new EventEmitter();
 

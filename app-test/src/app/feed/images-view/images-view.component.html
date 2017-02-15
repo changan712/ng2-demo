@@ -1,0 +1,15 @@
+<div ngClass="{'no-wrap':noWrap}" class="images-view length{{images.length}}">
+    <ion-scroll direction="x" scrollbar-x="false" class="feed-detail-scroll" *ngIf="noWrap">
+        <div class="con" > <!--wx-preview-img ng-style="getConStyle()"-->
+            <div class="iv-item" ngClass="{'avatar':list.length>1}" *ngFor="let item of images"><img
+                    src="{{item.href}}"  alt=""></div> <!--data-full-href="{{item.full_href}}"-->
+
+        </div>
+    </ion-scroll>
+    <div class="con" *ngIf="!noWrap" appPreview=""> <!--wx-preview-img -->
+        <div class="iv-item" ngClass="{'avatar':list.length>1}" *ngFor="let item of images"><img
+                src="{{item.href}}"  alt=""></div>  <!--data-full-href="{{item.full_href}}"-->
+
+    </div>
+
+</div>

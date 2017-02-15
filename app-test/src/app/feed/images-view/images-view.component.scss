@@ -1,0 +1,61 @@
+.images-view {
+
+  overflow: hidden;
+
+  &.length1 {
+    .con {
+      .iv-item {
+        width: 120px;
+        height: auto;
+        img {
+          width: 100%;
+        }
+
+      }
+    }
+    &.no-wrap {
+      .con {
+        .iv-item {
+          width: 100%;
+          height: 200px;
+          overflow: hidden;
+          img {
+            min-height: 100%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+  /*当*/
+  &.length4, &.length8 {
+    &:not(.no-wrap) {
+      max-width: 200px;
+    }
+  }
+
+  .con {
+    overflow: hidden;
+    margin: 0 -4px;
+
+    .iv-item {
+      margin: 2px;
+
+      float: left;
+      width: 80px;
+      height: 80px;
+      background: #fafafa;
+      position: relative;
+      .button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+        color: rgba(255, 255, 255, .6);
+      }
+
+    }
+  }
+}

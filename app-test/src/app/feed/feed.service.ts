@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
 export class FeedService {
 
     private api: string = '/api/app/feeds';
-    pageSize: number = 5;
+    pageSize: number = 10;
 
     constructor(private  http: Http) {
     }

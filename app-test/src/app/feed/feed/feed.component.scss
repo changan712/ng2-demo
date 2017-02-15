@@ -4,15 +4,29 @@
   background:#fff;
   border-top:1px solid #ddd;
   border-bottom:1px solid #ddd;
-  margin-bottom:10px;
+  margin-bottom:5px;
+  padding:10px 0;
 
 }
 
 .side{
-  flex:0 0 50px
+  flex:0 0 70px;
+  text-align:center;
+
 }
 
 .main{
-  padding:10px;
+  padding:0 10px;
+}
+
+ion-badge{
+  font-size:12px;
+  font-weight:normal;
+}
+
+.starr{
+  li{
+    padding:5px 0;
+  }
 }
 

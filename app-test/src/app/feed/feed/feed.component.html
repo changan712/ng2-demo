@@ -3,15 +3,32 @@
         <a class="avatar">
             <img [src]="view.user.avatar" alt="">
 
-        </a></div>
+        </a>
+        <div>{{view.user.name}}</div>
+
+    </div>
 
     <div class="main">
-        <ul (click)="starrClick()">
-            <li>{{view.situation}}</li>
-            <li>{{view.action}}</li>
-            <li>{{view.result}}</li>
-            <li>{{view.reflection}}</li>
+        <ul (click)="starrClick()" class="starr">
+            <li *ngIf="view.situation">
+                <ion-badge color="">S</ion-badge>
+                ion-b{{view.situation}}
+            </li>
+            <li *ngIf="view.action">
+                <ion-badge color="">A</ion-badge>
+                {{view.action}}
+            </li>
+            <li *ngIf="view.result">
+                <ion-badge color="">R</ion-badge>
+                {{view.result}}
+            </li>
+            <li *ngIf="view.reflection">
+                <ion-badge color="">F</ion-badge>
+                {{view.reflection}}
+            </li>
         </ul>
+
+        <app-images-view *ngIf="view.images?.length>1" [images]="view.images"></app-images-view>
 
     </div>
 </section>
