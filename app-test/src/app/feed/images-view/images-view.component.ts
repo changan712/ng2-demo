@@ -22,7 +22,7 @@ export class ImagesViewComponent implements OnInit {
 
 
     ngOnInit() {
-        console.log(this.images);
+
         
         this.previewParams = {list: this.images.map(item => {
             return item['full_href']

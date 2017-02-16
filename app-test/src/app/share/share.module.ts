@@ -7,6 +7,9 @@ import {UserComponent} from './user/user.component';
 import {FadeTransition} from "./page-transition";
 import {PreviewComponent} from "./preview/preview.component";
 import {PreviewDirective} from "./preview/preview.directive";
+import {CommentComponent} from './comment/comment.component';
+
+import {CommentShowDirective} from './comment/comment-show.directive';
 
 
 @NgModule({
@@ -20,6 +23,9 @@ import {PreviewDirective} from "./preview/preview.directive";
 
         PreviewDirective,
         PreviewComponent,
+        CommentComponent,
+        CommentShowDirective,
+
 
     ],
 
@@ -28,6 +34,8 @@ import {PreviewDirective} from "./preview/preview.directive";
         CommonModule,
         IonicModule,
         PreviewDirective,
+        CommentComponent,
+        CommentShowDirective,
 
     ],
     entryComponents: [PreviewComponent],

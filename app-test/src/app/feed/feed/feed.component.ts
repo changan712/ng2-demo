@@ -12,6 +12,8 @@ export class FeedComponent implements OnInit {
     @Output()
     detailClicked = new EventEmitter();
 
+    @Output()
+    commentEvent: EventEmitter<any> = new EventEmitter();
 
 
     constructor() {
@@ -20,6 +22,18 @@ export class FeedComponent implements OnInit {
     ngOnInit() {
 
 
+    }
+
+    doComment() {
+        this.commentEvent.emit({id: this.view.id});
+    }
+
+
+    toggleLike() {
+        console.log(2);
+        console.log(this.view.liked);
+
+        this.view.liked = !this.view.liked;
     }
 
     starrClick() {

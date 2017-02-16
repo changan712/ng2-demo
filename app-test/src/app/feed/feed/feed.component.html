@@ -37,7 +37,8 @@
          <span class="pull-right">
                <span>
 
-                 <ion-icon name="heart" isActive="view.liked" ngClass="{'red':view.liked}"></ion-icon>
+                 <ion-icon name="heart" [isActive]="view.liked" (click)="toggleLike()"
+                           [ngClass]="{'red':view.liked}"></ion-icon>
                 </span>
                 <span class="m-l-xs ">
                     <ion-icon name="ios-chatbubbles-outline"></ion-icon>

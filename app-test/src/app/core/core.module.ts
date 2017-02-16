@@ -6,6 +6,7 @@ import {HomeModule} from "../home/home.module";
 import {MyRequestOptions} from "./my-request-options";
 import {TabModule} from "../tab/tab.modlue";
 import {PublicModule} from "../public/public.module";
+import {StatusService} from "./status.service";
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {PublicModule} from "../public/public.module";
     declarations: [],
     exports: [],
     providers: [
+        StatusService,
         UserService,
         {provide: RequestOptions, useClass: MyRequestOptions}
     ],

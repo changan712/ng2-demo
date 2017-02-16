@@ -25,8 +25,8 @@ export class HomeComponent implements OnInit {
 
     goToPublic() {
         //
-        this.appCtrl.getRootNav().push(PublicComponent);
-        //this.navCtrl.push();
+        //his.appCtrl.getRootNav().push(PublicComponent);
+      this.appCtrl.getRootNav().setRoot(PublicComponent)
 
     }
 

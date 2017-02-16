@@ -1,0 +1,21 @@
+:host{
+  display:flex;
+  padding:5px;
+}
+
+.main{
+  flex:1 1;
+}
+
+textarea{
+  width:100%;
+  border:1px solid #ddd;
+  border-radius:5px;
+  padding:5px 8px;
+
+}
+
+button{
+  flex:0 0 40px;
+  margin:0 5px 0 10px;
+}

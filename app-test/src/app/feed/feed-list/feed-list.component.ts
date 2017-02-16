@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FeedService} from "../feed.service";
 import {NavController} from "ionic-angular";
 import {FeedDetailComponent} from "../feed-detail/feed-detail.component";
+import {StatusService} from "../../core/status.service";
 
 @Component({
     selector: 'app-feed-list',
@@ -12,7 +13,9 @@ export class FeedListComponent implements OnInit {
 
     feeds: any[] = [];
 
-    constructor(private feedSv: FeedService,private navCtrl:NavController) {
+    commentMod: boolean = false;
+
+    constructor(private feedSv: FeedService, private appStatus: StatusService, private navCtrl: NavController) {
     }
 
     ngOnInit() {
@@ -21,7 +24,18 @@ export class FeedListComponent implements OnInit {
 
     goToDetail(feed) {
         let id = feed.id;
-        this.navCtrl.push(FeedDetailComponent,{id:id});
+        this.navCtrl.push(FeedDetailComponent, {id: id});
+
+    }
+
+
+    showCommentBox() {
+        this.appStatus.commentMod = true;
+
+    }
+
+    msgHandle() {
+        console.log(arguments);
 
     }
 
