@@ -17,5 +17,18 @@
 </ion-header>
 
 <ion-content>
-    <div #viewport></div>
+    <div class="images-slider">
+
+        <ion-slides pager>
+
+            <ion-slide *ngFor="let item of list">
+
+                    <img [src]="item" class="preview-img" alt="">
+
+            </ion-slide>
+
+        </ion-slides>
+
+    </div>
+
 </ion-content>

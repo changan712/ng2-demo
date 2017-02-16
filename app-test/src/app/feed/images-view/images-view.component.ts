@@ -1,4 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
+import {PreviewParams} from "../../share/preview/preview-params";
 
 @Component({
     selector: 'app-images-view',
@@ -13,11 +14,20 @@ export class ImagesViewComponent implements OnInit {
     @Input()
     noWrap: boolean = false;
 
+    previewParams: PreviewParams;
+    appPreviewIndex:number=0;
+
     constructor() {
     }
 
 
     ngOnInit() {
+        console.log(this.images);
+        
+        this.previewParams = {list: this.images.map(item => {
+            return item['full_href']
+
+        })};
     }
 
 }

@@ -1,13 +1,13 @@
 <div ngClass="{'no-wrap':noWrap}" class="images-view length{{images.length}}">
     <ion-scroll direction="x" scrollbar-x="false" class="feed-detail-scroll" *ngIf="noWrap">
-        <div class="con">
-            <div class="iv-item" ngClass="{'avatar':list.length>1}" appPreview
+        <div class="con" [appPreview]="previewParams">
+            <div class="iv-item" ngClass="{'avatar':list.length>1}"
                  *ngFor="let item of images"><img
                     [src]="item.href" alt=""></div>
         </div>
     </ion-scroll>
-    <div class="con" *ngIf="!noWrap">
-        <div class="iv-item" appPreview ngClass="{'avatar':list.length>1}"
+    <div class="con" *ngIf="!noWrap" [appPreview]="previewParams">
+        <div class="iv-item"  ngClass="{'avatar':list.length>1}"
              *ngFor="let item of images"><img
                 [src]="item.href" alt=""></div>  <!--data-full-href="{{item.full_href}}"-->
 

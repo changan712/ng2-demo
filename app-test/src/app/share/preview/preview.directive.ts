@@ -1,16 +1,15 @@
 import {Directive, ElementRef, OnInit, HostListener, Input} from '@angular/core';
 
-import {ModalComponent} from "./modal/modal.component";
 import {ModalController, Config} from "ionic-angular";
-import {ImagesSliderComponent} from "./images-slider/images-slider.component";
+import {PreviewComponent} from "./preview.component";
 
 @Directive({
     selector: '[appPreview]'
 })
 export class PreviewDirective {
 
-
-
+    @Input()
+    appPreview: Array<any>;
 
     constructor(private config: Config, private modalCtrl: ModalController) {
 
@@ -19,13 +18,16 @@ export class PreviewDirective {
     }
 
 
-    @HostListener('click')
-    clickHandler() {
+    @HostListener('click',['$event'])
+    clickHandler(event) {
+        console.log(event);
+
         this.presentModal();
     }
 
     presentModal() {
-        let modal = this.modalCtrl.create(ModalComponent, {title: '预览', childComponent:ImagesSliderComponent});
+        
+        let modal = this.modalCtrl.create(PreviewComponent, this.appPreview);
         modal.present();
     }
 

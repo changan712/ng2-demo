@@ -2,10 +2,12 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {IonicModule} from "ionic-angular";
 import {UserComponent} from './user/user.component';
-import {ModalComponent} from './modal/modal.component';
-import {PreviewDirective} from './preview.directive';
+
+
 import {FadeTransition} from "./page-transition";
-import {ImagesSliderComponent} from "./images-slider/images-slider.component";
+import {PreviewComponent} from "./preview/preview.component";
+import {PreviewDirective} from "./preview/preview.directive";
+
 
 @NgModule({
     imports: [
@@ -15,9 +17,10 @@ import {ImagesSliderComponent} from "./images-slider/images-slider.component";
     declarations: [
 
         UserComponent,
-        ModalComponent,
+
         PreviewDirective,
-        ImagesSliderComponent
+        PreviewComponent,
+
     ],
 
     exports: [
@@ -27,7 +30,7 @@ import {ImagesSliderComponent} from "./images-slider/images-slider.component";
         PreviewDirective,
 
     ],
-    entryComponents: [ModalComponent,ImagesSliderComponent],
+    entryComponents: [PreviewComponent],
 
 
 })
