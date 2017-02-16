@@ -18,7 +18,6 @@ export class FeedComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.view);
 
 
     }

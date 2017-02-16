@@ -5,6 +5,7 @@ import {UserComponent} from './user/user.component';
 import {ModalComponent} from './modal/modal.component';
 import {PreviewDirective} from './preview.directive';
 import {FadeTransition} from "./page-transition";
+import {ImagesSliderComponent} from "./images-slider/images-slider.component";
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import {FadeTransition} from "./page-transition";
 
         UserComponent,
         ModalComponent,
-        PreviewDirective
+        PreviewDirective,
+        ImagesSliderComponent
     ],
 
     exports: [
@@ -25,7 +27,7 @@ import {FadeTransition} from "./page-transition";
         PreviewDirective,
 
     ],
-    entryComponents: [ModalComponent],
+    entryComponents: [ModalComponent,ImagesSliderComponent],
 
 
 })
