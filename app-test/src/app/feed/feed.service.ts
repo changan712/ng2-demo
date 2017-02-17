@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
 export class FeedService {
 
     private api: string = '/api/app/feeds';
+    private apiComment: string = '/api/app/feed-comments';
     pageSize: number = 10;
 
     constructor(private  http: Http) {
@@ -28,6 +29,14 @@ export class FeedService {
     }
 
     view(id: number) {
+
+    }
+
+    comment(id: number, data) {
+
+        let _data = Object.assign({}, data, {feed_id: id});
+
+        return this.http.post(this.apiComment, _data).map(res => res.json());
 
     }
 

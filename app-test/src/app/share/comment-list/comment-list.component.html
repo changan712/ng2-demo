@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let item of view">
+        <a (click)="toUser(item.user)">{{item.user.name}}</a><span (click)="doComment()"> {{item.info}}</span>
+    </li>
+</ul>

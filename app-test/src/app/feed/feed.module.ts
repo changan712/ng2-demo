@@ -6,7 +6,7 @@ import {ShareModule} from "../share/share.module";
 import {FeedComponent} from './feed/feed.component';
 import {FeedService} from "./feed.service";
 
-import { FeedCommentComponent } from './feed-comment/feed-comment.component';
+
 import { ImagesViewComponent } from './images-view/images-view.component';
 
 
@@ -16,7 +16,7 @@ import { ImagesViewComponent } from './images-view/images-view.component';
         ShareModule
     ],
     exports: [FeedListComponent],
-    declarations: [FeedListComponent, FeedDetailComponent, FeedComponent,  FeedCommentComponent, ImagesViewComponent],
+    declarations: [FeedListComponent, FeedDetailComponent, FeedComponent,   ImagesViewComponent],
     providers: [FeedService]
 })
 export class FeedModule {

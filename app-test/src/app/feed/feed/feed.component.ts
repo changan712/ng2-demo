@@ -13,6 +13,9 @@ export class FeedComponent implements OnInit {
     detailClicked = new EventEmitter();
 
     @Output()
+    userClicked = new EventEmitter;
+
+    @Output()
     commentEvent: EventEmitter<any> = new EventEmitter();
 
 
@@ -24,14 +27,17 @@ export class FeedComponent implements OnInit {
 
     }
 
+
+    toUser(user) {
+        this.userClicked.emit(user)
+    }
+
     doComment() {
-        this.commentEvent.emit({id: this.view.id});
+        this.commentEvent.emit(this.view);
     }
 
 
     toggleLike() {
-        console.log(2);
-        console.log(this.view.liked);
 
         this.view.liked = !this.view.liked;
     }

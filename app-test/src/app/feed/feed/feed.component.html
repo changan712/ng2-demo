@@ -30,20 +30,21 @@
             </ul>
 
             <app-images-view *ngIf="view.images?.length>1" [images]="view.images"></app-images-view>
-
-        </div>
-    </div>
-    <div class="feed-footer m-t-sm">
-         <span class="pull-right">
+            <div class="feed-footer m-t-sm">
+              <span class="pull-right">
                <span>
 
                  <ion-icon name="heart" [isActive]="view.liked" (click)="toggleLike()"
                            [ngClass]="{'red':view.liked}"></ion-icon>
                 </span>
-                <span class="m-l-xs ">
+                <span class="m-l-xs " (click)="doComment()">
                     <ion-icon name="ios-chatbubbles-outline"></ion-icon>
-                    {{view.comments.data.length}}
+                    {{view.comments.count}}
                 </span>
             </span><span>{{view.location}}</span>
+            </div>
+           <div class="comment-list-warp" *ngIf="view.comments?.data?.length"> <app-comment-list [view]="view.comments?.data" (userLinkEvent)="toUser($event)" (commentEvent)="doComment()"></app-comment-list></div>
+        </div>
     </div>
+
 </section>

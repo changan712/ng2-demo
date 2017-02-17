@@ -1,17 +1,38 @@
+
 :host{
-  display:flex;
-  padding:5px;
+  height:100%;
+
 }
 
-.main{
+.backdrop{
   flex:1 1;
+  background:rgba(0,0,0,.05);
 }
 
-textarea{
-  width:100%;
-  border:1px solid #ddd;
-  border-radius:5px;
-  padding:5px 8px;
+.wrap{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  height:100%;
+
+}
+
+.comment{
+  border-top:1px solid #ddd;
+  background:#fff;
+  display:flex;
+  padding:10px 5px;
+  .main{
+    flex:1 1;
+  }
+
+  textarea{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:3px;
+    padding: 8px;
+
+  }
 
 }
 

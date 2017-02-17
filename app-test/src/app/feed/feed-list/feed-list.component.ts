@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FeedService} from "../feed.service";
-import {NavController} from "ionic-angular";
+import {NavController, ModalController} from "ionic-angular";
 import {FeedDetailComponent} from "../feed-detail/feed-detail.component";
-import {StatusService} from "../../core/status.service";
+import {CommentComponent} from "../../share/comment/comment.component";
+
 
 @Component({
     selector: 'app-feed-list',
@@ -15,7 +16,7 @@ export class FeedListComponent implements OnInit {
 
     commentMod: boolean = false;
 
-    constructor(private feedSv: FeedService, private appStatus: StatusService, private navCtrl: NavController) {
+    constructor(private feedSv: FeedService, private modalCtrl: ModalController, private navCtrl: NavController) {
     }
 
     ngOnInit() {
@@ -28,18 +29,28 @@ export class FeedListComponent implements OnInit {
 
     }
 
-
-    showCommentBox() {
-        this.appStatus.commentMod = true;
-
-    }
-
-    msgHandle() {
-        console.log(arguments);
+    goToUserHome(user) {
+        //todo user home;
+        console.log(user);
 
     }
 
-    getFeeds(params?) {
+    comment(feed) {
+
+        let modal = this.modalCtrl.create(CommentComponent, {target: feed});
+        modal.present();
+        modal.onDidDismiss(data => {
+            if (data) {
+                this.feedSv.comment(feed.id, data).subscribe((res) => {
+                    feed.comments.data.unshift(res);
+                    feed.comments.count++;
+                });
+            }
+        })
+    }
+
+
+    getFeeds(params ?) {
         this.feedSv.index(params).subscribe(res => {
             this.feeds = res;
         })

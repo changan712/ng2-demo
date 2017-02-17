@@ -13,9 +13,7 @@
 </ion-header>
 
 <ion-content contentBottom="100">
-
-    <app-comment (msg)="msgHandle($event)"></app-comment>
-    <app-feed *ngFor="let item  of  feeds" (commentEvent)="showCommentBox($event)" (detailClicked)="goToDetail($event)" [view]="item"></app-feed>
+    <app-feed *ngFor="let item  of  feeds" (commentEvent)="comment($event)" (userClicked)="goToUserHome($event)" (detailClicked)="goToDetail($event)" [view]="item"></app-feed>
     <ion-fab right bottom >
         <button ion-fab color="secondary"><ion-icon name="add"></ion-icon></button>
     </ion-fab>

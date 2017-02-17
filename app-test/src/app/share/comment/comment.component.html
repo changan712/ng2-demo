@@ -1,5 +1,10 @@
-<div class="main">
-    <textarea rows="1" [(ngModel)]="content" placeholder="说两句.."></textarea>
+<div class="wrap">
+    <div class="backdrop" (click)="hide()"></div>
+    <div class="comment" >
+        <div class="main">
+            <textarea rows="1" #textarea (input)="setHeight(textarea)" [(ngModel)]="content" placeholder="说两句.."></textarea>
 
+        </div>
+        <button ion-button small clear="false" (click)="send()" color="light">发送</button>
+    </div>
 </div>
-<button ion-button small clear="false"  (click)="send()" color="light">发送</button>
