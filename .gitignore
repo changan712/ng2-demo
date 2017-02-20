@@ -2,3 +2,4 @@
 .gitignore
 .idea/
 module-demo/node_modules/
+/admin/node_modules/

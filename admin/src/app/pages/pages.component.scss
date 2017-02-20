@@ -1,0 +1,25 @@
+
+$sidenav-spacing-unit: 8px;
+$sidenav-width: 240px;
+
+:host{
+
+  flex:1 1;
+  display:flex;
+  position:relative;
+  flex-direction:column;
+
+}
+
+
+md-sidenav-container{
+  flex:1 1;
+  md-sidenav{
+    width: $sidenav-width;
+    padding:$sidenav-spacing-unit;
+    background:#ccc;
+
+  }
+
+}
+
