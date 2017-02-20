@@ -1,0 +1,49 @@
+
+.feed{
+  background:#fff;
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  margin-bottom:5px;
+  padding-top:10px;
+}
+
+.con{
+  display:flex;
+
+}
+
+.side{
+  flex:0 0 70px;
+  text-align:center;
+
+}
+
+.main{
+  padding:0 10px 10px;
+  flex:1 1;
+}
+
+ion-badge{
+  font-size:12px;
+  font-weight:normal;
+}
+
+.starr{
+  li{
+    padding:5px 0;
+  }
+}
+
+.feed-footer{
+  overflow:hidden;
+  padding: 5px 10px 5px 80px;
+  margin-top:10px;
+}
+
+.red{
+  color:red;
+}
+
+.comment-list-warp{
+  background:#f0f0f0;
+}

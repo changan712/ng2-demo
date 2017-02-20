@@ -13,9 +13,73 @@
 </ion-header>
 
 <ion-content contentBottom="100">
-    <app-feed *ngFor="let item  of  feeds" (commentEvent)="comment($event)" (userClicked)="goToUserHome($event)" (detailClicked)="goToDetail($event)" [view]="item"></app-feed>
-    <ion-fab right bottom >
-        <button ion-fab color="secondary"><ion-icon name="add"></ion-icon></button>
+    <!-- <app-feed *ngFor="let item  of  feeds" (commentEvent)="comment($event)" (userClicked)="goToUserHome($event)" (detailClicked)="goToDetail($event)" [view]="item"></app-feed>-->
+
+    <section class="feed " *ngFor="let item  of  feeds">
+        <div class="con">
+            <div class="side">
+                <a class="avatar">
+                    <img [src]="item.user.avatar" alt="">
+
+                </a>
+                <div>{{item.user.name}}</div>
+
+            </div>
+
+            <div class="main">
+                <ul (click)="goToDetail(item)" class="starr">
+                    <li *ngIf="item.situation">
+                        <ion-badge color="">S</ion-badge>
+                        ion-b{{item.situation}}
+                    </li>
+                    <li *ngIf="item.action">
+                        <ion-badge color="">A</ion-badge>
+                        {{item.action}}
+                    </li>
+                    <li *ngIf="item.result">
+                        <ion-badge color="">R</ion-badge>
+                        {{item.result}}
+                    </li>
+                    <li *ngIf="item.reflection">
+                        <ion-badge color="">F</ion-badge>l
+                        {{item.reflection}}
+                    </li>
+                </ul>
+
+                <app-images-view *ngIf="item.images?.length>1" [images]="item.images"></app-images-view>
+                <div class="feed-footer m-t-sm">
+              <span class="pull-right">
+               <span>
+
+                 <ion-icon name="heart" [isActive]="item.liked" (click)="toggleLike(item)"
+                           [ngClass]="{'red':item.liked}"></ion-icon>
+                </span>
+                <span class="m-l-xs " (click)="doComment(item)">
+                    <ion-icon name="ios-chatbubbles-outline"></ion-icon>
+                    {{item.comments.count}}
+                </span>
+            </span><span>{{item.location}}</span>
+                </div>
+                <div class="comment-list-warp" *ngIf="item.comments?.data?.length">
+                    <app-comment-list [view]="item.comments?.data" (userLinkEvent)="goToUserHome($event)"
+                                      (commentEvent)="doComment(item)"></app-comment-list>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+                loadingSpinner="bubbles"
+                loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+
+    <ion-fab right bottom>
+        <button ion-fab color="secondary">
+            <ion-icon name="add"></ion-icon>
+        </button>
     </ion-fab>
 </ion-content>
 

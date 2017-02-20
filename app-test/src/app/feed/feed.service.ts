@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Http, URLSearchParams} from "@angular/http";
+import {Http, URLSearchParams, Response} from "@angular/http";
 import {Observable} from "rxjs";
+import {ResponseHasMeta} from "../share/response-has-meta";
 
 @Injectable()
 export class FeedService {
@@ -13,7 +14,7 @@ export class FeedService {
     }
 
 
-    index(params?): Observable<any> {
+    index(params?): Observable<ResponseHasMeta> {
 
         let opt = Object.assign({_page_size: this.pageSize}, params);
 
@@ -23,8 +24,8 @@ export class FeedService {
             _search.set(k, opt[k]);
         }
 
-        return this.http.get(this.api, {search: _search}).map((res) => {
-            return res.json();
+        return this.http.get(this.api, {search: _search}).map((res: Response) => {
+            return {data: res.json(), meta: res.headers.get('X-Meta-List')};
         })
     }
 
@@ -32,11 +33,13 @@ export class FeedService {
 
     }
 
-    comment(id: number, data) {
+    comment(id: number, data): Observable<ResponseHasMeta> {
 
         let _data = Object.assign({}, data, {feed_id: id});
 
-        return this.http.post(this.apiComment, _data).map(res => res.json());
+        return this.http.post(this.apiComment, _data).map(res => {
+            return {data: res.json(), meta: res.headers.get('X-Meta-List')}
+        });
 
     }
 

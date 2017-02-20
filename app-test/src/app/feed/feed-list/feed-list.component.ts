@@ -3,6 +3,7 @@ import {FeedService} from "../feed.service";
 import {NavController, ModalController} from "ionic-angular";
 import {FeedDetailComponent} from "../feed-detail/feed-detail.component";
 import {CommentComponent} from "../../share/comment/comment.component";
+import {ResponseHasMeta} from "../../share/response-has-meta";
 
 
 @Component({
@@ -12,9 +13,10 @@ import {CommentComponent} from "../../share/comment/comment.component";
 })
 export class FeedListComponent implements OnInit {
 
-    feeds: any[] = [];
+    feeds: Array<any>;
 
     commentMod: boolean = false;
+    meta = null;
 
     constructor(private feedSv: FeedService, private modalCtrl: ModalController, private navCtrl: NavController) {
     }
@@ -35,7 +37,15 @@ export class FeedListComponent implements OnInit {
 
     }
 
-    comment(feed) {
+
+    doInfinite(infiniteScroll) {
+        this.getFeeds({_page: this.meta.currentPage + 1}, true).then(() => {
+                infiniteScroll.complete();
+            }
+        );
+    }
+
+    doComment(feed) {
 
         let modal = this.modalCtrl.create(CommentComponent, {target: feed});
         modal.present();
@@ -50,9 +60,21 @@ export class FeedListComponent implements OnInit {
     }
 
 
-    getFeeds(params ?) {
-        this.feedSv.index(params).subscribe(res => {
-            this.feeds = res;
+    toggleLike(feed) {
+        feed.liked = !feed.liked;
+    }
+
+    getFeeds(params?, isAdded = false) {
+        //因为要链式调用所以暂时用promise;
+        return this.feedSv.index(params).toPromise().then((res: ResponseHasMeta) => {
+            this.meta = JSON.parse(res.meta);
+
+            if (!isAdded) {
+                return this.feeds = res.data as Array<any>;
+            } else {
+                return this.feeds = this.feeds.concat(res.data);
+            }
+
         })
     }
 
