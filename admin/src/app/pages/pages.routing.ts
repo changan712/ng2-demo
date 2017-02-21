@@ -17,6 +17,10 @@ export const routes: Routes = [
             {
                 path: 'index',
                 loadChildren: 'app/pages/index/index.module#IndexModule'
+            },
+            {
+                path:'feed',
+                loadChildren: 'app/pages/feed/feed.module#FeedModule'
             }
         ]
 

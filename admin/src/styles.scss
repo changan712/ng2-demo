@@ -1,8 +1,12 @@
 @import '~@angular/material/core/theming/all-theme';
-@import "app-theme";
+@import "./app-theme";
+@import "./app/style/com";
+@import "./app/style/typography";
 
 $fa-font-path:"~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
+
+
 
 // Include material core styles.
 @include mat-core();
@@ -14,6 +18,11 @@ $accent:mat-palette($mat-amber, A200, A100, A400);
 $theme:mat-dark-theme($primary, $accent);
 @include angular-material-theme($theme);
 @include app-theme($theme);
+
+//common style
+@include fontSize();
+@include mp();
+@include typography($theme)
 
 html, body{
   height:100%;
@@ -34,4 +43,8 @@ li, ul, dl, dd, dt{
 p{
   padding:0;
   margin:0;
+}
+
+.mat-button .mat-button-wrapper .fa{
+  vertical-align:baseline;
 }

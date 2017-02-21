@@ -8,7 +8,7 @@ import {MaterialModule} from "@angular/material";
 @NgModule({
     imports: [
         CommonModule,
-        MaterialModule,
+
         routing
     ],
     declarations: [IndexComponent]

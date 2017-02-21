@@ -3,11 +3,14 @@
     <md-sidenav opened="true" mode="side" #sidenav class="example-sidenav">
         <ul>
             <li *ngFor="let item of menuItems">
-                <a md-button routerLinkActive="active" *ngIf="item.name" [routerLink]="item.name"> <i class="fa {{item.icon}}"></i>  {{item.label}}</a>
-                <!--<md-icon fontSet="fa" class="fa-4x"  [fontIcon]="item.icon"></md-icon>-->
-                <a md-button disableRipple *ngIf="!item.name"><md-icon>{{item.icon}}</md-icon>{{item.label}}</a>
+                <a md-button routerLinkActive="active" *ngIf="!item.children?.length" [routerLink]="item.name"> <i
+                        class="fa {{item.icon}} m-r-xs"></i>{{item.label}}</a>
 
-                <ul *ngIf="item.children?.length">
+                <a md-button disableRipple *ngIf="item.children?.length" (click)="toggleChildren(item)"><i
+                        [ngClass]="{'fa-angle-down':!item.opened,'fa-angle-up':item.opened}"
+                        class="fa  m-t-sm pull-right "></i><i class="fa {{item.icon}} m-r-xs"></i> {{item.label}}</a>
+
+                <ul *ngIf="item.children?.length" [hidden]="!item.opened">
                     <li *ngFor="let child of item.children">
                         <a md-button md-button routerLinkActive="active" [routerLink]="[item.name,child.name]">
                             {{child.label}}</a>

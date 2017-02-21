@@ -22,18 +22,27 @@ md-sidenav-container{
 
 }
 
+
+
+
 li>a{
   display:block;
   text-align:left;
+  font-size:15px;
   &.active{
     color:#00abff;
   }
 }
 
-li>ul{
-  padding-left:10px;
+
+li:not(:first-child){
+  border-top:1px solid rgba(255,255,255,.1);
+}
+li li{
+  border:none;
 }
 
 li li a{
-  font-size:.8em;
+  padding-left:36px;
+  font-size:.7em;
 }

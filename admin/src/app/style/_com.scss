@@ -1,0 +1,59 @@
+
+
+@mixin fontSize($from:10,$through:36) {
+  @for $size from $from through $through{
+    .f#{$size}{
+      font-size:#{$size}px !important;
+    }
+  }
+}
+
+@function line($style) {
+  @if $style != ''{
+    @return '-';
+  } @else{
+    @return '';
+  }
+}
+
+@mixin mp() {
+  $map:(none: 0, auto: auto, ii: initial, ih: inherit, xxs: 2px, xs: 5px, sm: 10px, '': 15px, md: 20px, lg: 30px, xl: 40px, xxl: 50px,
+          n-xxs: -2px, n-xs: -5px, n-sm: -10px, n: -15px, n-md: 20px, n-lg: 30px, n-xl: -40px, n-xxl: -50px);
+
+  $names:(m: margin, p: padding);
+  @each $n-key, $n-value in $names{
+    @each $style, $padding in $map{
+      $line:line($style);
+      .#{$n-key}#{$line}#{$style}{
+        #{$n-value}:$padding !important;
+      }
+    }
+
+    @each $style, $padding in $map{
+      $line:line($style);
+      .#{$n-key}-v#{$line}#{$style}{
+        #{$n-value}-top:$padding !important;
+        #{$n-value}-bottom:$padding !important;
+      }
+    }
+
+    @each $style, $padding in $map{
+      $line:line($style);
+      .#{$n-key}-h#{$line}#{$style}{
+        #{$n-value}-left:$padding !important;
+        #{$n-value}-right:$padding !important;
+      }
+    }
+
+    $directions:(t: top, b: bottom, l: left, r:right);
+    @each $d-key, $d-value in $directions{
+      @each $style, $padding in $map{
+        $line:line($style);
+        .#{$n-key}-#{$d-key}#{$line}#{$style}{
+          #{$n-value}-#{$d-value}:$padding !important;
+        }
+      }
+    }
+  }
+
+}

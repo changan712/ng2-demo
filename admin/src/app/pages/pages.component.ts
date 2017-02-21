@@ -17,4 +17,8 @@ export class PagesComponent implements OnInit {
         this.menuItems = this.menuSv.get();
     }
 
+
+    toggleChildren(item) {
+        item.opened = !item.opened
+    }
 }

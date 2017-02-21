@@ -1,0 +1,42 @@
+@mixin typography($theme) {
+  $primary:map-get($theme, primary);
+  $accent:map-get($theme, accent);
+  $warn:map-get($theme, warn);
+  $background:map-get($theme, background);
+  $foreground:map-get($theme, foreground);
+
+  h1{
+    color:mat-color($primary, 800);
+    background:rgba(mat-color($foreground, secondary-text), .03);
+  }
+
+  h3, h2, h4, h5, p, ol, li{
+    color:mat-color($foreground, secondary-text);
+  }
+
+  a{
+    color:mat-color($primary);
+  }
+
+  table.table{
+    box-shadow:0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+    border-collapse:collapse;
+    width:100%;
+    background:rgba(mat-color($foreground, secondary-text), .03);
+    .no-shadow{
+      box-shadow:none;
+    }
+    td{
+      color:mat-color($foreground, secondary-text);
+      border:1px solid rgba(mat-color($foreground, secondary-text), .03);
+      padding:5px;
+    }
+
+    th{
+      color:mat-color($foreground, secondary-text);
+      background:rgba(mat-color($foreground, secondary-text), .03);
+      padding:5px;
+    }
+  }
+
+}
