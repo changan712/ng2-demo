@@ -1,24 +1,37 @@
 @import '~@angular/material/core/theming/all-theme';
 @import "app-theme";
 
+$fa-font-path:"~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
+
 // Include material core styles.
 @include mat-core();
 
-
-
 // Define the light theme.
-$primary: mat-palette($mat-blue);
-$accent:  mat-palette($mat-amber, A200, A100, A400);
+$primary:mat-palette($mat-blue);
+$accent:mat-palette($mat-amber, A200, A100, A400);
 
-$theme: mat-dark-theme($primary, $accent);
+$theme:mat-dark-theme($primary, $accent);
 @include angular-material-theme($theme);
 @include app-theme($theme);
 
-html,body{
+html, body{
   height:100%;
   padding:0;
   margin:0;
 }
+
 *{
   box-sizing:border-box;
+}
+
+li, ul, dl, dd, dt{
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+
+p{
+  padding:0;
+  margin:0;
 }

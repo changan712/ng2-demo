@@ -9,6 +9,7 @@ import {routing} from "./app.routing";
 
 import {PagesModule} from "./pages/pages.module";
 import {MaterialModule} from "@angular/material";
+import {CoreModule} from "./core/core.module";
 
 
 @NgModule({
@@ -21,11 +22,10 @@ import {MaterialModule} from "@angular/material";
         BrowserModule,
         FormsModule,
         HttpModule,
+        CoreModule,
         PagesModule,
         MaterialModule,
         routing
-
-
     ],
     providers: [],
     bootstrap: [AppComponent]

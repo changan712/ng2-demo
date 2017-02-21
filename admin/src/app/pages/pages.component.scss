@@ -1,6 +1,6 @@
 
 $sidenav-spacing-unit: 8px;
-$sidenav-width: 240px;
+$sidenav-width: 200px;
 
 :host{
 
@@ -16,10 +16,24 @@ md-sidenav-container{
   flex:1 1;
   md-sidenav{
     width: $sidenav-width;
-    padding:$sidenav-spacing-unit;
-
+    padding:$sidenav-spacing-unit 0;
 
   }
 
 }
 
+li>a{
+  display:block;
+  text-align:left;
+  &.active{
+    color:#00abff;
+  }
+}
+
+li>ul{
+  padding-left:10px;
+}
+
+li li a{
+  font-size:.8em;
+}

@@ -1,8 +1,22 @@
-
 <app-navbar></app-navbar>
 <md-sidenav-container class="example-container">
-    <md-sidenav opened="true"   mode="side" #sidenav class="example-sidenav">
-        Jolly good!
+    <md-sidenav opened="true" mode="side" #sidenav class="example-sidenav">
+        <ul>
+            <li *ngFor="let item of menuItems">
+                <a md-button routerLinkActive="active" *ngIf="item.name" [routerLink]="item.name"> <i class="fa {{item.icon}}"></i>  {{item.label}}</a>
+                <!--<md-icon fontSet="fa" class="fa-4x"  [fontIcon]="item.icon"></md-icon>-->
+                <a md-button disableRipple *ngIf="!item.name"><md-icon>{{item.icon}}</md-icon>{{item.label}}</a>
+
+                <ul *ngIf="item.children?.length">
+                    <li *ngFor="let child of item.children">
+                        <a md-button md-button routerLinkActive="active" [routerLink]="[item.name,child.name]">
+                            {{child.label}}</a>
+                    </li>
+                </ul>
+
+            </li>
+
+        </ul>
     </md-sidenav>
 
     <div class="example-sidenav-content">
