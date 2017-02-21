@@ -1,0 +1,15 @@
+@mixin navbar-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  app-navbar {
+    color: mat-color($primary, default-contrast);
+    background: mat-color($primary);
+    .docs-navbar {
+
+    }
+  }
+}
