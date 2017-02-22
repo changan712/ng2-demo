@@ -10,6 +10,9 @@ import {routing} from "./app.routing";
 import {PagesModule} from "./pages/pages.module";
 import {MaterialModule} from "@angular/material";
 import {CoreModule} from "./core/core.module";
+import {LocationStrategy, HashLocationStrategy} from "@angular/common";
+
+
 
 
 @NgModule({
@@ -27,7 +30,7 @@ import {CoreModule} from "./core/core.module";
         MaterialModule,
         routing
     ],
-    providers: [],
+    providers: [{provide:LocationStrategy,useClass: HashLocationStrategy}],
     bootstrap: [AppComponent]
 })
 export class AppModule {

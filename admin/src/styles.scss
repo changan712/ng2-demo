@@ -1,7 +1,7 @@
 @import '~@angular/material/core/theming/all-theme';
 @import "./app-theme";
-@import "./app/style/com";
-@import "./app/style/typography";
+@import "./style/com";
+@import "./style/typography";
 
 $fa-font-path:"~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
@@ -23,11 +23,13 @@ $theme:mat-dark-theme($primary, $accent);
 @include fontSize();
 @include mp();
 @include typography($theme)
+@include align();
 
 html, body{
   height:100%;
   padding:0;
   margin:0;
+
 }
 
 *{

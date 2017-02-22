@@ -1,5 +1,3 @@
-
-
 @mixin fontSize($from:10,$through:36) {
   @for $size from $from through $through{
     .f#{$size}{
@@ -13,6 +11,16 @@
     @return '-';
   } @else{
     @return '';
+  }
+}
+
+@mixin align() {
+  $map:(l:left, c:center, r:right);
+
+  @each $key, $value in $map{
+    .a-#{$key}{
+      text-align:#{$value} !important;
+    }
   }
 }
 
