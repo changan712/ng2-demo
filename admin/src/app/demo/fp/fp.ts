@@ -29,7 +29,7 @@ export class Maybe extends FunctorBase {
     }
 
     map(f) {
-        return this.val ? Maybe.of(f.this.val) : Maybe.of(null);
+        return this.val ? Maybe.of(this.val) : Maybe.of(null);
     }
 }
 
@@ -66,4 +66,25 @@ export class Ap extends FunctorBase {
     ap(F) {
         return Ap.of(this.val(F.val));
     }
+}
+
+export class Monad extends FunctorBase {
+
+    static  of(val) {
+        return new Monad(val)
+    }
+
+    join() {
+        return this.val;
+    }
+
+    map(f) {
+        return new Monad(f(this.val));
+    }
+
+    flatMap(f){
+        return this.map(f).join();
+    }
+
+
 }

@@ -35,7 +35,7 @@ export class FpComponent implements OnInit {
 
         let add = x => y => x + y;
 
-       console.log( Ap.of(add));
+       console.log( Ap.of(add).ap(Functor.of(2)).ap(Functor.of(3)));
        
 
 
