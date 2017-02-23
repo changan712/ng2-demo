@@ -2,33 +2,27 @@
 
     <table class="table no-shadow">
         <thead>
-        <tr>
+        <tr class="a-l">
             <th>id</th>
-            <th>id</th>
-            <th>id</th>
-            <th>id</th>
-            <th>id</th>
-            <th>id</th>
-            <th>id</th>
+            <th>situation</th>
+            <th>target</th>
+            <th>result</th>
+            <th>reflection</th>
+            <th>评论</th>
+            <th width="200">操作</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
+        <tr  *ngFor="let item of list">
+            <td>{{item.id}}</td>
+            <td>{{item.situation}}</td>
+            <td>{{item.target}}</td>
+            <td>{{item.result}}</td>
+            <td>{{item.reflect}}</td>
+            <td>{{item.comment?.data?.length}}</td>
+            <td><a md-button color="primary"><i class="fa fa-remove"></i></a><a md-button color="primary"><i class="fa fa-eye"></i></a></td>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
+
         </tbody>
     </table>
 </div>

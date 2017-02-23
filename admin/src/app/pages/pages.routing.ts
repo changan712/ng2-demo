@@ -2,12 +2,16 @@ import {Routes, RouterModule}  from '@angular/router';
 
 import {ModuleWithProviders} from '@angular/core';
 import {PagesComponent} from "./pages.component";
+import {UserResolveService} from "../core/user-resolve.service";
 
 
 export const routes: Routes = [
     {
         path: 'pages',
         component: PagesComponent,
+        resolve:{
+            user:UserResolveService
+        },
         children: [
             {
                 path: '',

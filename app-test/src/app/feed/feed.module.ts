@@ -17,7 +17,7 @@ import { ImagesViewComponent } from './images-view/images-view.component';
     ],
     exports: [FeedListComponent],
     declarations: [FeedListComponent, FeedDetailComponent,    ImagesViewComponent],
-    providers: [FeedService]
+    providers: []
 })
 export class FeedModule {
 }
