@@ -7,6 +7,8 @@ import {RequestOptions, HttpModule} from "@angular/http";
 import {UserService} from "./user.service";
 import {UserResolveService} from "./user-resolve.service";
 import {FeedService} from "../pages/feed/feed.service";
+import {ConfirmService} from "../shared/comfirm/confirm.service";
+
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import {FeedService} from "../pages/feed/feed.service";
         UserService,
         UserResolveService,
         FeedService,
+        ConfirmService,
+
         {provide: RequestOptions, useClass: MyRequestOptions}
     ],
 

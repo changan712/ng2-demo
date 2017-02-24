@@ -20,7 +20,7 @@
             <td>{{item.result}}</td>
             <td>{{item.reflect}}</td>
             <td>{{item.comment?.data?.length}}</td>
-            <td><a md-button color="primary"><i class="fa fa-remove"></i></a><a md-button color="primary"><i class="fa fa-eye"></i></a></td>
+            <td><a md-icon-button ><i class="fa fa-eye"></i></a><a md-icon-button (click)="remove(item.id)"><i class="fa fa-remove"></i></a></td>
         </tr>
 
         </tbody>

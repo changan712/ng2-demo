@@ -37,9 +37,14 @@
     .no-shadow{
       box-shadow:none;
     }*/
+
+  /*  tr:nth-child(2n){
+      background:rgba(mat-color($foreground, secondary-text), .02);
+    }*/
     td{
       color:mat-color($foreground, secondary-text);
-      border:1px solid rgba(mat-color($foreground, secondary-text), .03);
+      border-bottom:1px solid rgba(mat-color($foreground, secondary-text), .02);
+      border-top:1px solid rgba(mat-color($foreground, secondary-text), .02);
       padding:5px;
     }
 

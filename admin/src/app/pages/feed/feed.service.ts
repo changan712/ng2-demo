@@ -29,4 +29,17 @@ export class FeedService {
         })
     }
 
+    view(id: number): Observable<ResponseHasMeta> {
+        return this.http.get(this.api + '/' + id).map((res: Response) => {
+            return {data: res.json()}
+        })
+    }
+
+    remove(id: number): Observable<ResponseHasMeta> {
+        return this.http.delete(this.api + '/' + id).map((res: Response) => {
+            return {data: res.json(), meta: res.headers.get('X-Meta-List')}
+        })
+
+    }
+
 }

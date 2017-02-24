@@ -1,0 +1,9 @@
+<h1 md-dialog-title>{{options?.title}}</h1>
+<div md-dialog-content>{{options?.content}}
+</div>
+
+
+<div md-dialog-actions>
+    <button md-button (click)="dialogRef.close(false)">{{options?.cancelTxt}}</button>
+    <button md-button (click)="dialogRef.close(true)">{{options?.okTxt}}</button>
+</div>
