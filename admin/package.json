@@ -24,6 +24,7 @@
     "@angular/router": "^3.4.8",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "ng2-pagination": "^2.0.1",
     "rxjs": "^5.2.0",
     "ts-helpers": "^1.1.2",
     "zone.js": "^0.7.7"

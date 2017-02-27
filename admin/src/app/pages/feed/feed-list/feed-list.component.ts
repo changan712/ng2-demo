@@ -15,32 +15,46 @@ export class FeedListComponent implements OnInit {
     list = [];
     meta = null;
 
-    constructor(private confirmSv:ConfirmService,private  feedSv: FeedService, private dialog: MdDialog) {
+    currentPage: number;
+
+    constructor(private confirmSv: ConfirmService, private  feedSv: FeedService, private dialog: MdDialog) {
 
 
     }
 
     ngOnInit() {
-        this.feedSv.index().subscribe((res: ResponseHasMeta) => {
-                console.log(res);
+        this.index();
 
-                this.list = this.list.concat(res.data);
+    }
+
+    index(params?) {
+        this.feedSv.index(params).subscribe((res: ResponseHasMeta) => {
+                this.list = res.data as  Array<any>;
                 this.meta = res.meta;
             }
         )
+    }
 
+    pageChange(currentPage) {
+
+        this.currentPage = currentPage;
+        if (this.meta.currentPage != this.currentPage) {
+            this.list = [];
+            this.index({_page: this.currentPage});
+        }
     }
 
     remove(id: number) {
 
-        this.confirmSv.show().then(function () {
-            console.log(1);
-            
+        this.confirmSv.show().then((res) => {
+            this.feedSv.remove(id).subscribe((res) => {
+                this.index();
+            })
+        }, (error) => {
+
         });
 
-      /*  this.feedSv.remove(id).subscribe((res: ResponseHasMeta) => {
 
-        })*/
     }
 
 

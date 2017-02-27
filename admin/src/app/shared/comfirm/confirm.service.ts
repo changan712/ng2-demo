@@ -21,7 +21,6 @@ export class ConfirmService {
     show(options: ConfirmOption = DEFAULT_OPTION, config?: MdDialogConfig): Promise<any> {
 
         let _config: MdDialogConfig = Object.assign({}, config, {data: options});
-        console.log(_config);
 
         
         let dialogRef = this.dialog.open(ConfirmComponent, _config);

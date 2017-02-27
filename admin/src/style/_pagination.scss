@@ -1,0 +1,52 @@
+@mixin pagination($theme) {
+
+  $primary:map-get($theme, primary);
+  $accent:map-get($theme, accent);
+  $warn:map-get($theme, warn);
+  $background:map-get($theme, background);
+  $foreground:map-get($theme, foreground);
+
+
+  pagination-controls{
+    .ng2-pagination{
+      color:mat-color($foreground, base);
+      padding:10px 0;
+      margin:0;
+
+      li{
+        &.disabled{
+          background:mat-color($background, raised-button);
+          &:hover{
+            background:mat-color($background, raised-button);
+          }
+          &:after, &::before{
+            margin:0 !important;
+          }
+        }
+        &.current{
+          background:mat-color($primary, default);
+          color:mat-color($foreground, base);
+          &:hover{
+            background:mat-color($primary, darker);
+          }
+
+        }
+
+        a{
+          cursor:default;
+          color:mat-color($foreground, base);
+          background:mat-color($background, raised-button);
+          &:before, &:after{
+            margin:0 !important;
+          }
+          &:hover{
+            color:mat-color($foreground, base);
+            background:mat-color($background, hover);
+          }
+        }
+      }
+
+    }
+  }
+
+}

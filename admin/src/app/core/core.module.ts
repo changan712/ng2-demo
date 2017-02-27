@@ -1,4 +1,4 @@
-import {NgModule, Optional, SkipSelf} from '@angular/core';
+import {NgModule, Optional, SkipSelf, ErrorHandler} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {StateService} from "./state.service";
 import {MenuConfigService} from "./menu-config";
@@ -8,7 +8,7 @@ import {UserService} from "./user.service";
 import {UserResolveService} from "./user-resolve.service";
 import {FeedService} from "../pages/feed/feed.service";
 import {ConfirmService} from "../shared/comfirm/confirm.service";
-
+import {MyErrorHandler} from "./my-error-handler";
 
 
 @NgModule({
@@ -25,6 +25,8 @@ import {ConfirmService} from "../shared/comfirm/confirm.service";
         FeedService,
         ConfirmService,
 
+
+        {provide: ErrorHandler, useClass: MyErrorHandler},
         {provide: RequestOptions, useClass: MyRequestOptions}
     ],
 

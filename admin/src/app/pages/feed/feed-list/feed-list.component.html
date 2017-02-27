@@ -1,28 +1,40 @@
 <div class="p-sm">
+    <div class=" a-r">
 
-    <table class="table no-shadow">
-        <thead>
-        <tr class="a-l">
-            <th>id</th>
-            <th>situation</th>
-            <th>target</th>
-            <th>result</th>
-            <th>reflection</th>
-            <th>评论</th>
-            <th width="200">操作</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr  *ngFor="let item of list">
-            <td>{{item.id}}</td>
-            <td>{{item.situation}}</td>
-            <td>{{item.target}}</td>
-            <td>{{item.result}}</td>
-            <td>{{item.reflect}}</td>
-            <td>{{item.comment?.data?.length}}</td>
-            <td><a md-icon-button ><i class="fa fa-eye"></i></a><a md-icon-button (click)="remove(item.id)"><i class="fa fa-remove"></i></a></td>
-        </tr>
+        <pagination-controls previousLabel=""
+                             nextLabel="" (pageChange)="pageChange($event)" #api></pagination-controls>
+    </div>
+    <div>
+        <table class="table no-shadow" *ngIf="meta">
+            <thead>
+            <tr class="a-l">
+                <th>id</th>
+                <th>situation</th>
+                <th>target</th>
+                <th>result</th>
+                <th>reflection</th>
+                <th>评论</th>
+                <th width="200">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of list  | paginate: { itemsPerPage: 20, totalItems:meta.totalCount,currentPage: currentPage} ">
+                <td>{{item.id}}</td>
+                <td>{{item.situation}}</td>
+                <td>{{item.target}}</td>
+                <td>{{item.result}}</td>
+                <td>{{item.reflect}}</td>
+                <td>{{item.comment?.data?.length}}</td>
+                <td><a md-icon-button><i class="fa fa-eye"></i></a><a md-icon-button (click)="remove(item.id)"><i
+                        class="fa fa-remove"></i></a></td>
+            </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+    <div class=" a-r">
+
+        <pagination-controls previousLabel=""
+                             nextLabel="" (pageChange)="pageChange($event)" #api></pagination-controls>
+    </div>
 </div>

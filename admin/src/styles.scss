@@ -2,11 +2,10 @@
 @import "./app-theme";
 @import "./style/com";
 @import "./style/typography";
+@import "./style/pagination";
 
 $fa-font-path:"~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
-
-
 
 // Include material core styles.
 @include mat-core();
@@ -16,6 +15,7 @@ $primary:mat-palette($mat-blue);
 $accent:mat-palette($mat-amber, A200, A100, A400);
 
 $theme:mat-dark-theme($primary, $accent);
+
 @include angular-material-theme($theme);
 @include app-theme($theme);
 
@@ -24,12 +24,12 @@ $theme:mat-dark-theme($primary, $accent);
 @include mp();
 @include typography($theme)
 @include align();
+@include pagination($theme);
 
 html, body{
   height:100%;
   padding:0;
   margin:0;
-
 
 }
 
@@ -40,8 +40,6 @@ body{
 *{
   box-sizing:border-box;
 }
-
-
 
 li, ul, dl, dd, dt{
   padding:0;
@@ -57,3 +55,4 @@ p{
 .mat-button .mat-button-wrapper .fa{
   vertical-align:baseline;
 }
+

@@ -15,7 +15,7 @@ export class FeedService {
 
     index(params?): Observable<ResponseHasMeta> {
 
-        let opt = Object.assign({_page_size: this.pageSize}, params);
+        let opt = Object.assign({_page_size: this.pageSize, _page: 1}, params);
 
         let _search = new URLSearchParams();
 
@@ -25,7 +25,9 @@ export class FeedService {
 
 
         return this.http.get(this.api, {search: _search}).map((res: Response) => {
-            return {data: res.json(), meta: res.headers.get('X-Meta-List')};
+            let meta = JSON.parse(res.headers.get('X-Meta-List'));
+            meta['totalCount'] = parseInt(meta['totalCount']);
+            return {data: res.json(), meta};
         })
     }
 
@@ -35,9 +37,9 @@ export class FeedService {
         })
     }
 
-    remove(id: number): Observable<ResponseHasMeta> {
+    remove(id: number): Observable<any> {
         return this.http.delete(this.api + '/' + id).map((res: Response) => {
-            return {data: res.json(), meta: res.headers.get('X-Meta-List')}
+            return res.json();
         })
 
     }
