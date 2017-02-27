@@ -56,3 +56,27 @@ p{
   vertical-align:baseline;
 }
 
+.block{
+  display:block !important;
+}
+
+.inline{
+  display:inline !important;
+}
+
+.inline-block{
+  display:inline-block !important;
+}
+
+.flex{
+  display:flex !important;
+}
+
+.clear-fix{
+  &:after{
+    content:' ';
+    display:block;
+    clear:both;
+    overflow:hidden;
+  }
+}

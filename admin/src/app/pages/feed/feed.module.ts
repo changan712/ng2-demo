@@ -8,6 +8,7 @@ import {FeedService} from "./feed.service";
 import {SharedModule} from "../../shared/shared.module";
 import {MyRequestOptions} from "../../core/my-request-options";
 import {RequestOptions} from "@angular/http";
+import {FeedNewComponent} from "./feed-new/feed-new.component";
 
 @NgModule({
     imports: [
@@ -15,7 +16,7 @@ import {RequestOptions} from "@angular/http";
         SharedModule,
         routing
     ],
-    declarations: [FeedListComponent, FeedDetailComponent],
+    declarations: [FeedListComponent, FeedDetailComponent,FeedNewComponent],
     providers: [  ]
 })
 export class FeedModule {

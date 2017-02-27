@@ -26,7 +26,7 @@ import {MyErrorHandler} from "./my-error-handler";
         ConfirmService,
 
 
-        {provide: ErrorHandler, useClass: MyErrorHandler},
+   /*     {provide: ErrorHandler, useClass: MyErrorHandler},*/
         {provide: RequestOptions, useClass: MyRequestOptions}
     ],
 

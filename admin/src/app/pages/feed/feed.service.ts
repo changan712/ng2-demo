@@ -31,9 +31,9 @@ export class FeedService {
         })
     }
 
-    view(id: number): Observable<ResponseHasMeta> {
+    view(id: number) {
         return this.http.get(this.api + '/' + id).map((res: Response) => {
-            return {data: res.json()}
+            return  res.json();
         })
     }
 

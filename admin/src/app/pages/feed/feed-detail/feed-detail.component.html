@@ -1,3 +1,18 @@
-<p>
-  feed-detail works!
-</p>
+<div class="p-sm">
+    <div></div>
+    <div *ngIf="detail">
+        <md-card *ngIf="detail.situation">
+            {{detail.situation}}
+        </md-card>
+        <md-card *ngIf="detail.task">
+            {{detail.task}}
+        </md-card>
+        <md-card *ngIf="detail.result">
+            {{detail.result}}
+        </md-card>
+        <md-card *ngIf="detail.reflection">
+            {{detail.reflection}}
+        </md-card>
+    </div>
+
+</div>
