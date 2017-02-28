@@ -29,8 +29,10 @@ import {LocationStrategy, HashLocationStrategy} from "@angular/common";
         MaterialModule,
         routing
     ],
-    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+
     bootstrap: [AppComponent]
 })
+
+
 export class AppModule {
 }

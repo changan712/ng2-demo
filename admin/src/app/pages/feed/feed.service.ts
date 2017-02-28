@@ -7,11 +7,16 @@ import {ResponseHasMeta} from "../../core/response-has-meta";
 export class FeedService {
 
     private api = '/api/app/feed';
+
     pageSize: 20;
 
     constructor(private http: Http) {
     }
 
+
+    getGoals(userId:number){
+
+    }
 
     index(params?): Observable<ResponseHasMeta> {
 
