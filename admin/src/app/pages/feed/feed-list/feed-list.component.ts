@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FeedService} from "../feed.service";
+
 import {ResponseHasMeta} from "../../../core/response-has-meta";
 import {MenuConfigService} from "../../../core/menu-config";
 import {MdDialog} from "@angular/material";
 import {ConfirmService} from "../../../shared/comfirm/confirm.service";
+import {FeedService} from "../../../resource/feed.service";
 
 @Component({
     selector: 'app-feed-list',

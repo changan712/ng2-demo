@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Resolve} from "@angular/router";
-import {UserService} from "../resource/user/user.service";
+import {UserService} from "../resource/user.service";
 
 
 @Injectable()

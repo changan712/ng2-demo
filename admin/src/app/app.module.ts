@@ -9,8 +9,7 @@ import {AppComponent} from './app.component';
 import {RouterModule} from "@angular/router";
 import {routing} from "./app.routing";
 
-import {PagesModule} from "./pages/pages.module";
-import {MaterialModule} from "@angular/material";
+
 import {CoreModule} from "./core/core.module";
 import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 
@@ -23,10 +22,7 @@ import {LocationStrategy, HashLocationStrategy} from "@angular/common";
     ],
     imports: [
         BrowserModule,
-        FormsModule,
         CoreModule,
-        PagesModule,
-        MaterialModule,
         routing
     ],
 
