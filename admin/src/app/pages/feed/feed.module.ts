@@ -9,11 +9,12 @@ import {SharedModule} from "../../shared/shared.module";
 import {MyRequestOptions} from "../../core/my-request-options";
 import {RequestOptions} from "@angular/http";
 import {FeedNewComponent} from "./feed-new/feed-new.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     imports: [
-
         SharedModule,
+        FormsModule,
         routing
     ],
     declarations: [FeedListComponent, FeedDetailComponent,FeedNewComponent],

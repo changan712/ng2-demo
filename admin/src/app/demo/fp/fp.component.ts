@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {Functor, Maybe, Ap} from  './fp';
+import {ComponentWithTitle} from "../component-with-title";
 
 
 @Component({
@@ -8,7 +9,9 @@ import {Functor, Maybe, Ap} from  './fp';
     templateUrl: './fp.component.html',
     styleUrls: ['./fp.component.scss']
 })
-export class FpComponent implements OnInit {
+export class FpComponent implements OnInit,ComponentWithTitle {
+
+    title = 'fp';
 
     Functor: string = `
     export class Functor {
@@ -35,8 +38,7 @@ export class FpComponent implements OnInit {
 
         let add = x => y => x + y;
 
-       console.log( Ap.of(add).ap(Functor.of(2)).ap(Functor.of(3)));
-
+        console.log(Ap.of(add).ap(Functor.of(2)).ap(Functor.of(3)));
 
 
     }

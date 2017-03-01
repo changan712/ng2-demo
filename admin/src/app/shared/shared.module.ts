@@ -11,6 +11,8 @@ import {Ng2PaginationModule} from "ng2-pagination";
 @NgModule({
     imports: [
         CommonModule,
+        RouterModule,
+        MaterialModule,
         Ng2PaginationModule,
     ],
 

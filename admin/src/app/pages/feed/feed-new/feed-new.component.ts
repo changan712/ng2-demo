@@ -8,14 +8,22 @@ import {StateService} from "../../../core/state.service";
 })
 export class FeedNewComponent implements OnInit {
 
+    data = {};
+
     constructor(private  state: StateService) {
     }
 
     ngOnInit() {
 
+    }
+
+
+    submit(form) {
+            console.dir(form);
 
     }
-    private getGoals(){
+
+    private getGoals() {
 
     }
 

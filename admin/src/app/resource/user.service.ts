@@ -10,7 +10,6 @@ export class UserService {
 
     constructor(private http: Http, private state: StateService) {
 
-
     }
 
     login(id?: number) {
