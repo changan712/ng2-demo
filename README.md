@@ -1,4 +1,6 @@
 # ng2-demo
-ionic2 app with angular-cli
+### admin 
+ng2-cli ng2 material 
 
-
+### app-test
+ionic2 ng2
