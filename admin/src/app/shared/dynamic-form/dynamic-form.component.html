@@ -1,0 +1,14 @@
+<div>
+    <form (ngSubmit)="onSubmit()" novalidate [formGroup]="form">
+        <div class="block m-b-lg" *ngFor="let question of questions">
+            <app-dynamic-form-control [question]="question" [form]="form"></app-dynamic-form-control>
+        </div>
+
+        <div class="p-v">
+            <button md-raised-button color="primary" [disabled]="form.invalid">提交</button>
+        </div>
+
+    </form>
+
+</div>
+

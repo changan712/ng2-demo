@@ -8,6 +8,7 @@ import {ConfirmComponent} from "./comfirm/confirm.component";
 import {Ng2PaginationModule} from "ng2-pagination";
 
 
+
 @NgModule({
     imports: [
         CommonModule,

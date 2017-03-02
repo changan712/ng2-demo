@@ -1,17 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 
 import {Functor, Maybe, Ap} from  './fp';
-import {ComponentWithTitle} from "../component-with-title";
-
 
 @Component({
     selector: 'app-fp',
     templateUrl: './fp.component.html',
     styleUrls: ['./fp.component.scss']
 })
-export class FpComponent implements OnInit,ComponentWithTitle {
+export class FpComponent implements OnInit {
 
-    title = 'fp';
 
     Functor: string = `
     export class Functor {

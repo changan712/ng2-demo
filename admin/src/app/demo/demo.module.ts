@@ -7,14 +7,17 @@ import {routing} from "./demo.routing";
 import {PollComponent} from "./poll/poll.component";
 import {IndexComponent} from "./index/index.component";
 import {RouterModule} from "@angular/router";
+import {DynamicFormModule} from "../shared/dynamic-form/dynamic-form.module";
 
 
 @NgModule({
     imports: [
         SharedModule,
+        DynamicFormModule,
         routing,
+
     ],
-    declarations: [DemoComponent, FpComponent, PollComponent,IndexComponent]
+    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent]
 })
 export class DemoModule {
 
