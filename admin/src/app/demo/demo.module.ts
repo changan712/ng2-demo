@@ -8,6 +8,8 @@ import {PollComponent} from "./poll/poll.component";
 import {IndexComponent} from "./index/index.component";
 import {RouterModule} from "@angular/router";
 import {DynamicFormModule} from "../shared/dynamic-form/dynamic-form.module";
+import {AdDirective} from "./dc/ad.directive";
+import {DcComponent} from "./dc/dc.component";
 
 
 @NgModule({
@@ -17,7 +19,7 @@ import {DynamicFormModule} from "../shared/dynamic-form/dynamic-form.module";
         routing,
 
     ],
-    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent]
+    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,AdDirective]
 })
 export class DemoModule {
 

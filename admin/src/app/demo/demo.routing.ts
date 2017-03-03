@@ -4,13 +4,14 @@ import {FpComponent} from "./fp/fp.component";
 import {DemoComponent} from "./demo.component";
 import {PollComponent} from "./poll/poll.component";
 import {IndexComponent} from "./index/index.component";
+import {DcComponent} from "./dc/dc.component";
 
 export const routes: Routes = [
     {
         path: '',
 
         component: DemoComponent,
-        children:[
+        children: [
             {
                 path: 'index',
                 component: IndexComponent
@@ -23,9 +24,12 @@ export const routes: Routes = [
                 path: 'poll',
                 component: PollComponent
             },
+            {
+                path: 'dc',
+                component: DcComponent
+            },
         ]
     },
-
 
 
 ];
