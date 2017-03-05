@@ -1,5 +1,5 @@
 # ng2-demo
-### [admin]('./admin') 
+### [admin](/admin) 
 ng2-cli ng2 material 
 
 ### app-test
