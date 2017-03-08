@@ -13,15 +13,15 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^2.4.8",
-    "@angular/compiler": "^2.4.8",
-    "@angular/core": "^2.4.8",
-    "@angular/forms": "^2.4.8",
-    "@angular/http": "^2.4.8",
+    "@angular/common": "^2.4.9",
+    "@angular/compiler": "^2.4.9",
+    "@angular/core": "^2.4.9",
+    "@angular/forms": "^2.4.9",
+    "@angular/http": "^2.4.9",
     "@angular/material": "^2.0.0-beta.2",
-    "@angular/platform-browser": "^2.4.8",
-    "@angular/platform-browser-dynamic": "^2.4.8",
-    "@angular/router": "^3.4.8",
+    "@angular/platform-browser": "^2.4.9",
+    "@angular/platform-browser-dynamic": "^2.4.9",
+    "@angular/router": "^3.4.9",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "ng2-pagination": "^2.0.1",
@@ -30,11 +30,11 @@
     "zone.js": "^0.7.7"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^2.4.8",
+    "@angular/cli": "^1.0.0-rc.1",
+    "@angular/compiler-cli": "^2.4.9",
     "@types/jasmine": "2.5.43",
     "@types/node": "^7.0.5",
-    "angular-cli": "1.0.0-beta.28.3",
-    "codelyzer": "~2.0.1",
+    "codelyzer": "~3.0.0-beta.3",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "3.2.0",
     "karma": "1.5.0",
@@ -44,7 +44,7 @@
     "karma-remap-istanbul": "^0.6.0",
     "protractor": "~5.1.1",
     "ts-node": "2.1.0",
-    "tslint": "^4.4.2",
-    "typescript": "~2.1.6"
+    "tslint": "^4.5.1",
+    "typescript": "~2.2.1"
   }
 }
