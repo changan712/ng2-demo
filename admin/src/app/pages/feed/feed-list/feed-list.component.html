@@ -1,14 +1,15 @@
 <div class="p-sm">
-    <div class="clear-fix"  >
+    <div class="clear-fix">
         <a md-raised-button color="accent" routerLink="new">新建</a>
         <pagination-controls *ngIf="list.length" class="pull-right" previousLabel=""
-                             nextLabel="" (pageChange)="pageChange($event)" ></pagination-controls>
+                             nextLabel="" (pageChange)="pageChange($event)"></pagination-controls>
     </div>
     <div>
         <table class="table no-shadow" *ngIf="meta">
             <thead>
             <tr class="a-l">
-                <th>id</th>
+                <th width="50">id</th>
+                <th>user</th>
                 <th>situation</th>
                 <th>target</th>
                 <th>result</th>
@@ -20,20 +21,25 @@
             <tbody>
             <tr *ngFor="let item of list  | paginate: { itemsPerPage: 20, totalItems:meta.totalCount,currentPage: currentPage} ">
                 <td>{{item.id}}</td>
+                <td><span class="avatar avatar-sm round"><img [src]="item.user.avatar" alt=""></span> {{item.user.name}}
+                </td>
                 <td>{{item.situation}}</td>
                 <td>{{item.target}}</td>
                 <td>{{item.result}}</td>
                 <td>{{item.reflect}}</td>
                 <td>{{item.comment?.data?.length}}</td>
-                <td><a md-icon-button [routerLink]="[item.id]"><i class="fa fa-eye"></i></a><a md-icon-button (click)="remove(item.id)"><i
-                        class="fa fa-remove"></i></a></td>
+                <td>
+                    <a md-icon-button [routerLink]="[item.id]"><i class="fa fa-eye"></i></a>
+                    <a md-icon-button [routerLink]="['edit',item.id]"><i class="fa fa-edit"></i></a>
+                    <a md-icon-button (click)="remove(item.id)"><i class="fa fa-remove"></i></a>
+                </td>
             </tr>
 
             </tbody>
         </table>
     </div>
-    <div class=" a-r"  *ngIf="list.length">
+    <div class=" a-r" *ngIf="list.length">
         <pagination-controls previousLabel=""
-                             nextLabel="" (pageChange)="pageChange($event)"  #api></pagination-controls>
+                             nextLabel="" (pageChange)="pageChange($event)" #api></pagination-controls>
     </div>
 </div>

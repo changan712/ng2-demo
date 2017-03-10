@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 import {ResponseHasMeta} from "../../../core/response-has-meta";
 import {MenuConfigService} from "../../../core/menu-config";
