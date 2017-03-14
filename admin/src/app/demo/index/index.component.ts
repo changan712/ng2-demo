@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 
-const DEMO_CHILDREN = ['poll','fp','dc' ];
+const DEMO_CHILDREN = ['poll','fp','dc','decorator' ];
 
 
 @Component({
@@ -16,6 +16,8 @@ export class IndexComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log(this.list);
+        
     }
 
 }

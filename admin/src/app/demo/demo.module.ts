@@ -10,6 +10,7 @@ import {RouterModule} from "@angular/router";
 import {DynamicFormModule} from "../shared/dynamic-form/dynamic-form.module";
 import {AdDirective} from "./dc/ad.directive";
 import {DcComponent} from "./dc/dc.component";
+import {DecoratorComponent} from "./decorator/decorator.component";
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import {DcComponent} from "./dc/dc.component";
         routing,
 
     ],
-    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,AdDirective]
+    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,DecoratorComponent,AdDirective]
 })
 export class DemoModule {
 
