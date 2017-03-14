@@ -1,6 +1,6 @@
 import { AdminPage } from './app.po';
 
-describe('admin App', function() {
+describe('admin App', () => {
   let page: AdminPage;
 
   beforeEach(() => {

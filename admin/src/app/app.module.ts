@@ -1,32 +1,20 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import './rxjs-extensions'
-
-import {AppComponent} from './app.component';
-import {RouterModule} from "@angular/router";
-import {routing} from "./app.routing";
-
-
-import {CoreModule} from "./core/core.module";
-import {LocationStrategy, HashLocationStrategy} from "@angular/common";
-
+import { AppComponent } from './app.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-    ],
-    imports: [
-        BrowserModule,
-        CoreModule,
-        routing
-    ],
-
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-
-
-export class AppModule {
-}
+export class AppModule { }
