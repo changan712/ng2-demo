@@ -11,7 +11,7 @@
                 <th width="50">id</th>
                 <th>user</th>
                 <th>situation</th>
-                <th>target</th>
+                <th>task</th>
                 <th>result</th>
                 <th>reflection</th>
                 <th>评论</th>
@@ -24,9 +24,9 @@
                 <td><span class="avatar avatar-sm round"><img [src]="item.user.avatar" alt=""></span> {{item.user.name}}
                 </td>
                 <td>{{item.situation}}</td>
-                <td>{{item.target}}</td>
+                <td>{{item.task}}</td>
                 <td>{{item.result}}</td>
-                <td>{{item.reflect}}</td>
+                <td>{{item.reflection}}</td>
                 <td>{{item.comment?.data?.length}}</td>
                 <td>
                     <a md-icon-button [routerLink]="[item.id]"><i class="fa fa-eye"></i></a>

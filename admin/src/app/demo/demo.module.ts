@@ -11,6 +11,7 @@ import {DynamicFormModule} from "../shared/dynamic-form/dynamic-form.module";
 import {AdDirective} from "./dc/ad.directive";
 import {DcComponent} from "./dc/dc.component";
 import {DecoratorComponent} from "./decorator/decorator.component";
+import { ObjectComponent } from './object/object.component';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import {DecoratorComponent} from "./decorator/decorator.component";
         routing,
 
     ],
-    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,DecoratorComponent,AdDirective]
+    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,DecoratorComponent,AdDirective, ObjectComponent]
 })
 export class DemoModule {
 

@@ -1,14 +1,14 @@
 
-
-
 .con{
   display:flex;
   flex-wrap:wrap;
+  justify-content:space-between;
+
+  .link{
+    margin:5px;
+    flex:1 1 25%;
+    min-width:300px;
+    padding:10px;
+  }
 }
 
-.link{
-  margin:5px;
-  flex:1 1 25%;
-  min-width:300px;
-  padding:10px;
-}

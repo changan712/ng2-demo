@@ -6,6 +6,7 @@ import {PollComponent} from "./poll/poll.component";
 import {IndexComponent} from "./index/index.component";
 import {DcComponent} from "./dc/dc.component";
 import {DecoratorComponent} from "./decorator/decorator.component";
+import {ObjectComponent} from "./object/object.component";
 
 export const routes: Routes = [
     {
@@ -32,6 +33,10 @@ export const routes: Routes = [
             {
                 path: 'decorator',
                 component: DecoratorComponent,
+            },
+            {
+                path: 'object',
+                component: ObjectComponent,
             },
         ]
     },

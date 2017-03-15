@@ -2,9 +2,10 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 
 import {ResponseHasMeta} from "../../../core/response-has-meta";
 import {MenuConfigService} from "../../../core/menu-config";
-import {MdDialog} from "@angular/material";
+
 import {ConfirmService} from "../../../shared/comfirm/confirm.service";
 import {FeedService} from "../../../resource/feed.service";
+import {MdDialog} from "@angular/material";
 
 @Component({
     selector: 'app-feed-list',
@@ -18,14 +19,12 @@ export class FeedListComponent implements OnInit {
 
     currentPage: number;
 
-    constructor(private confirmSv: ConfirmService, private  feedSv: FeedService, private dialog: MdDialog) {
-
+    constructor(private confirmSv: ConfirmService, private  feedSv: FeedService, private dialog:MdDialog) {
 
     }
 
     ngOnInit() {
         this.index();
-
     }
 
     index(params?) {
@@ -37,7 +36,6 @@ export class FeedListComponent implements OnInit {
     }
 
     pageChange(currentPage) {
-
         this.currentPage = currentPage;
         if (this.meta.currentPage != this.currentPage) {
             this.list = [];

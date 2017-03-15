@@ -1,23 +1,31 @@
-<div class="p-sm">
+<div class="p-sm con">
     <form name="form" novalidate #myForm="ngForm" (ngSubmit)="submit(myForm)">
-        <md-input-container floatPlaceholder="false" class="block m-b-md">
-        <textarea mdInput mdTextareaAutosize name="situation" #situation [(ngModel)]="data.situation"
+        <md-input-container floatPlaceholder="false" class="block m-b-lg">
+        <textarea mdInput mdTextareaAutosize name="situation" required #situation [(ngModel)]="data.situation"
                   placeholder="situation"
                   maxlength="200"></textarea>
         </md-input-container>
-        <md-input-container class="block m-b">
-            <textarea mdInput placeholder="task"  required name="task" [(ngModel)]="data.task" maxlength="200"></textarea>
+        <md-input-container class="block m-b-lg">
+            <textarea mdInput placeholder="task" required name="task" [(ngModel)]="data.task"
+                      maxlength="200"></textarea>
         </md-input-container>
-        <md-input-container class="block m-b">
-            <textarea mdInput placeholder="result" name="result" [(ngModel)]="data.result" maxlength="200"></textarea>
+        <md-input-container class="block m-b-lg">
+            <textarea mdInput placeholder="result" required name="result" [(ngModel)]="data.result"
+                      maxlength="200"></textarea>
         </md-input-container>
-        <md-input-container class="block m-b">
+        <md-input-container class="block m-b-lg">
             <textarea mdInput placeholder="reflection" name="reflection" [(ngModel)]="data.reflection"
                       maxlength="200"></textarea>
         </md-input-container>
+
+        <md-select class="block m-b-lg"  [required]="value.min_length" *ngFor="let value of values"  [placeholder]="value.name"  >
+            <md-option  *ngFor="let item of value.values"  [value]="item?.id">{{ item?.name }}</md-option>
+        </md-select>
 
         <div class="p-v">
             <button md-button md-raised-button color="primary" [disabled]="!myForm.valid">提交</button>
         </div>
     </form>
+
 </div>
+

@@ -6,6 +6,7 @@ import {FeedNewComponent} from "./feed-new/feed-new.component";
 export const routes: Routes = [
     {path: '', component:FeedListComponent, pathMatch: 'full'},
     {path: 'new', component:FeedNewComponent},
+    {path: 'edit/:id', component:FeedNewComponent},
     {path: ':id', component:FeedDetailComponent},
 
 

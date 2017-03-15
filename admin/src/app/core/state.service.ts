@@ -22,11 +22,5 @@ export class StateService {
         return this._currentUser;
     }
 
-    getState() {
-
-        return this.subject.next({
-            user: this._currentUser
-        })
-    }
 
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 
-const DEMO_CHILDREN = ['poll','fp','dc','decorator' ];
+const DEMO_CHILDREN = ['poll','fp','dc','decorator','object'];
 
 
 @Component({
