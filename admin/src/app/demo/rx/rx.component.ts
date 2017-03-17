@@ -5,6 +5,8 @@ import {
 import {Router} from "@angular/router";
 import {BasicComponent} from "./basic/basic.component";
 import {VHostDirective} from "../../shared/v-host/v-host.directive";
+import {RxJsComponent} from "./rx-js/rx-js.component";
+import {ExtendComponent} from "./extend/extend.component";
 
 
 @Component({
@@ -17,10 +19,13 @@ export class RxComponent implements AfterViewInit {
 
     tabs = [
         {label: 'basic', content: BasicComponent},
-        {label: 'basic2', content: BasicComponent},
+        {label: 'rxJs', content: RxJsComponent},
+        {label: 'extend', content: ExtendComponent},
     ];
 
-    @ViewChildren(VHostDirective,) vHosts: QueryList<any>;
+    activeIndex: number = 2;
+
+    @ViewChildren(VHostDirective) vHosts: QueryList<any>;
 
     constructor(private componentFactoryResolver: ComponentFactoryResolver) {
 
@@ -29,9 +34,7 @@ export class RxComponent implements AfterViewInit {
 
     addComponents() {
         this.tabs.forEach((item, index) => {
-            let componentFactory = this.componentFactoryResolver.resolveComponentFactory(item.content);
-            console.log(this.vHosts);
-            
+            let componentFactory = this.componentFactoryResolver.resolveComponentFactory(<any>item.content);
             let viewContainerRef = this.vHosts.toArray()[index].viewContainerRef;
             viewContainerRef.clear();
             viewContainerRef.createComponent(componentFactory);
@@ -41,7 +44,6 @@ export class RxComponent implements AfterViewInit {
 
     ngAfterViewInit() {
         this.addComponents();
-        console.log((<QueryList<any>>this.vHosts).length);
 
     }
 

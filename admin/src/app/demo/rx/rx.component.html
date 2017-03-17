@@ -1,7 +1,7 @@
 <div class="p">
-    <md-tab-group>
+    <md-tab-group [selectedIndex]="activeIndex">
         <md-tab [label]="item.label" *ngFor="let item of tabs">
-            <div class="p" appVHost  ></div>
+            <div class="p" appVHost></div>
         </md-tab>
 
     </md-tab-group>
