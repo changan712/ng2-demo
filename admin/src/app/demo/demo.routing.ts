@@ -7,6 +7,7 @@ import {IndexComponent} from "./index/index.component";
 import {DcComponent} from "./dc/dc.component";
 import {DecoratorComponent} from "./decorator/decorator.component";
 import {ObjectComponent} from "./object/object.component";
+import {RxComponent} from "./rx/rx.component";
 
 export const routes: Routes = [
     {
@@ -37,6 +38,10 @@ export const routes: Routes = [
             {
                 path: 'object',
                 component: ObjectComponent,
+            },
+            {
+                path: 'rx',
+                loadChildren: 'app/demo/rx/rx.module#RxModule'
             },
         ]
     },

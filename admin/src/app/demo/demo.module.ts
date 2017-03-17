@@ -14,6 +14,7 @@ import {DecoratorComponent} from "./decorator/decorator.component";
 import { ObjectComponent } from './object/object.component';
 
 
+
 @NgModule({
     imports: [
         SharedModule,
