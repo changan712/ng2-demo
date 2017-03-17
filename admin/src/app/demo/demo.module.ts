@@ -22,6 +22,9 @@ import { ObjectComponent } from './object/object.component';
         routing,
 
     ],
+    entryComponents:[
+
+    ],
     declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,DecoratorComponent,AdDirective, ObjectComponent]
 })
 export class DemoModule {

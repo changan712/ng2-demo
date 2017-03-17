@@ -6,7 +6,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {RouterModule} from "@angular/router";
 import {ConfirmComponent} from "./comfirm/confirm.component";
 import {Ng2PaginationModule} from "ng2-pagination";
-
+import {VHostDirective} from './v-host/v-host.directive';
 
 
 @NgModule({
@@ -17,9 +17,9 @@ import {Ng2PaginationModule} from "ng2-pagination";
         Ng2PaginationModule,
     ],
 
-    declarations: [NavbarComponent, ConfirmComponent],
+    declarations: [NavbarComponent, ConfirmComponent, VHostDirective],
 
-    exports: [CommonModule, MaterialModule, NavbarComponent, Ng2PaginationModule],
+    exports: [CommonModule, MaterialModule, NavbarComponent,VHostDirective, Ng2PaginationModule],
     entryComponents: [ConfirmComponent]
 
 })

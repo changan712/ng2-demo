@@ -1,6 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {
+    Component, OnInit, ViewChild, ComponentFactoryResolver, AfterViewInit, ViewChildren,
+    QueryList
+} from '@angular/core';
 import {Router} from "@angular/router";
 import {BasicComponent} from "./basic/basic.component";
+import {VHostDirective} from "../../shared/v-host/v-host.directive";
 
 
 @Component({
@@ -9,18 +13,35 @@ import {BasicComponent} from "./basic/basic.component";
     templateUrl: './rx.component.html',
     styleUrls: ['./rx.component.scss']
 })
-export class RxComponent implements OnInit {
+export class RxComponent implements AfterViewInit {
 
     tabs = [
-        {basic:BasicComponent}
-    ]
+        {label: 'basic', content: BasicComponent},
+        {label: 'basic2', content: BasicComponent},
+    ];
 
-    constructor(){
+    @ViewChildren(VHostDirective,) vHosts: QueryList<any>;
+
+    constructor(private componentFactoryResolver: ComponentFactoryResolver) {
 
     }
 
 
-    ngOnInit(){
+    addComponents() {
+        this.tabs.forEach((item, index) => {
+            let componentFactory = this.componentFactoryResolver.resolveComponentFactory(item.content);
+            console.log(this.vHosts);
+            
+            let viewContainerRef = this.vHosts.toArray()[index].viewContainerRef;
+            viewContainerRef.clear();
+            viewContainerRef.createComponent(componentFactory);
+        })
+    }
+
+
+    ngAfterViewInit() {
+        this.addComponents();
+        console.log((<QueryList<any>>this.vHosts).length);
 
     }
 

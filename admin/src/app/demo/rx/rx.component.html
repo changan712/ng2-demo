@@ -1,7 +1,9 @@
 <div class="p">
     <md-tab-group>
-        <md-tab label="Tab 1">Content 1</md-tab>
-        <md-tab label="Tab 2" content=""></md-tab>
+        <md-tab [label]="item.label" *ngFor="let item of tabs">
+            <div class="p" appVHost  ></div>
+        </md-tab>
+
     </md-tab-group>
 
 </div>

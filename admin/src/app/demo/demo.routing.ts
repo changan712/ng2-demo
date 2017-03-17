@@ -12,7 +12,6 @@ import {RxComponent} from "./rx/rx.component";
 export const routes: Routes = [
     {
         path: '',
-
         component: DemoComponent,
         children: [
             {
