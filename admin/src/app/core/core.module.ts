@@ -24,7 +24,6 @@ import {PagesModule} from "../pages/pages.module";
         UserResolveService,
         StateService,
         ConfirmService,
-
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         /*     {provide: ErrorHandler, useClass: MyErrorHandler},*/
         {provide: RequestOptions, useClass: MyRequestOptions}

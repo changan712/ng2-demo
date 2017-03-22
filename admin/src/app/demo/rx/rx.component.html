@@ -1,6 +1,6 @@
 <div class="p">
-    <md-tab-group [selectedIndex]="activeIndex">
-        <md-tab [label]="item.label" *ngFor="let item of tabs">
+    <md-tab-group [selectedIndex]="activeIndex" (selectedIndexChange)="selectChange($event)">
+        <md-tab [label]="item.label" *ngFor="let item of tabs" >
             <div class="p" appVHost></div>
         </md-tab>
 

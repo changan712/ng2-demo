@@ -3,7 +3,7 @@ export class Observable {
 
     }
 
-    subscribe(observer) {
+    subscribe(observer:Observer) {
         this._generator.call(this, observer)
     }
 }

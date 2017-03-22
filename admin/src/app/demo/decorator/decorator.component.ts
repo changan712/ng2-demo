@@ -14,7 +14,6 @@ class A {
 }
 let a = new A();
 
-console.log(a);
 
 
 function log(target, name, descriptor) {
@@ -55,13 +54,13 @@ export class DecoratorComponent implements OnInit {
     constructor() {
     }
 
-    @dec(1)
-    @dec(2)
+  /*  @dec(1)
+    @dec(2)*/
     m(){
 
     }
 
-    @log
+   // @log
     add(a, b) {
         return a + b;
     }
