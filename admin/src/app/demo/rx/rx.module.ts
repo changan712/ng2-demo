@@ -8,6 +8,7 @@ import {RxJsComponent} from './rx-js/rx-js.component';
 import {ExtendComponent} from './extend/extend.component';
 import {CreateComponent} from './create/create.component';
 import {TransformComponent} from './transform/transform.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
     imports: [
@@ -20,6 +21,7 @@ import {TransformComponent} from './transform/transform.component';
         ExtendComponent,
         CreateComponent,
         TransformComponent,
+        FilterComponent,
     ],
     declarations: [
         BasicComponent,
@@ -27,7 +29,8 @@ import {TransformComponent} from './transform/transform.component';
         RxJsComponent,
         ExtendComponent,
         CreateComponent,
-        TransformComponent
+        TransformComponent,
+        FilterComponent,
     ]
 })
 export class RxModule {

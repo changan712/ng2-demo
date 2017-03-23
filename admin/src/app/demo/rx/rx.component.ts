@@ -9,6 +9,7 @@ import {RxJsComponent} from "./rx-js/rx-js.component";
 import {ExtendComponent} from "./extend/extend.component";
 import {CreateComponent} from "./create/create.component";
 import {TransformComponent} from "./transform/transform.component";
+import {FilterComponent} from "./filter/filter.component";
 
 
 @Component({
@@ -25,9 +26,10 @@ export class RxComponent implements AfterViewInit,OnInit {
         {label: 'extend', content: ExtendComponent},
         {label: 'create', content: CreateComponent},
         {label: 'transform', content: TransformComponent},
+        {label: 'filter', content: FilterComponent},
     ];
 
-    activeIndex: string|number = 4;
+    activeIndex: string|number = 5;
 
     @ViewChildren(VHostDirective) vHosts: QueryList<any>;
 
@@ -37,7 +39,7 @@ export class RxComponent implements AfterViewInit,OnInit {
     }
 
     ngOnInit() {
-        console.log(this.aRoute);
+       // console.log(this.aRoute);
         
         this.aRoute.fragment.subscribe(n => {
             if (n)
