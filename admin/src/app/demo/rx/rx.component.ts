@@ -10,6 +10,7 @@ import {ExtendComponent} from "./extend/extend.component";
 import {CreateComponent} from "./create/create.component";
 import {TransformComponent} from "./transform/transform.component";
 import {FilterComponent} from "./filter/filter.component";
+import {ComposeComponent} from "./compose/compose.component";
 
 
 @Component({
@@ -27,9 +28,10 @@ export class RxComponent implements AfterViewInit,OnInit {
         {label: 'create', content: CreateComponent},
         {label: 'transform', content: TransformComponent},
         {label: 'filter', content: FilterComponent},
+        {label: 'compose', content: ComposeComponent},
     ];
 
-    activeIndex: string|number = 5;
+    activeIndex: string|number = 6;
 
     @ViewChildren(VHostDirective) vHosts: QueryList<any>;
 

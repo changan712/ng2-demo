@@ -56,11 +56,31 @@ export class FilterComponent implements OnInit {
             });
 
 
-        this.chips.push('skip');
-        this.sub4 = Observable.timer(0,1000)
-
+        this.chips.push('distinct');
+        this.sub4 = Observable.of(0, 2, 2, 3, 11, 3, 4, 5)
+        //
+            .distinct()
             .subscribe(d => {
-                console.log(d, 'timer');
+                console.log(d, 'distinct');
+
+            });
+        this.chips.push('elementAt');
+        this.sub5 = Observable.of(0, 2, 2, 3, 11, 3, 4, 5)
+
+            .elementAt(2)
+            .subscribe(d => {
+                console.log(d, 'elementAt');
+
+            });
+
+
+        //find firs  返回第一个找到的元素； last 返回最后一个找到的元素；
+        this.chips.push('find');
+        this.sub5 = Observable.of(0, 2, 2, 3, 11, 3, 4, 5)
+
+            .find((item) => item > 3)
+            .subscribe(d => {
+                console.log(d, 'find');
 
             });
 
