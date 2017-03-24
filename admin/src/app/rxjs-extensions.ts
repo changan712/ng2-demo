@@ -12,3 +12,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/elementAt';
+
+
+//for demo
+import 'rxjs/add/operator/bufferCount';
+import 'rxjs/add/operator/bufferTime';

@@ -10,6 +10,7 @@ import {CreateComponent} from './create/create.component';
 import {TransformComponent} from './transform/transform.component';
 import { FilterComponent } from './filter/filter.component';
 import { ComposeComponent } from './compose/compose.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
     imports: [
@@ -24,6 +25,7 @@ import { ComposeComponent } from './compose/compose.component';
         TransformComponent,
         FilterComponent,
         ComposeComponent,
+        ErrorComponent,
     ],
     declarations: [
         BasicComponent,
@@ -34,6 +36,7 @@ import { ComposeComponent } from './compose/compose.component';
         TransformComponent,
         FilterComponent,
         ComposeComponent,
+        ErrorComponent,
     ]
 })
 export class RxModule {

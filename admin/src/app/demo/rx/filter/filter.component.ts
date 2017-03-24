@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy} from '@angular/core';
 import {Subscription, Observable} from "rxjs";
 
 @Component({
@@ -6,7 +6,7 @@ import {Subscription, Observable} from "rxjs";
     templateUrl: './filter.component.html',
     styleUrls: ['./filter.component.scss']
 })
-export class FilterComponent implements OnInit {
+export class FilterComponent implements OnInit,OnDestroy {
 
 
     sub1: Subscription;
@@ -24,6 +24,15 @@ export class FilterComponent implements OnInit {
     chips: Array<string> = [];
 
     constructor() {
+    }
+
+    ngOnDestroy() {
+        this.sub1.unsubscribe();
+        this.sub2.unsubscribe();
+        this.sub3.unsubscribe();
+        this.sub4.unsubscribe();
+        this.sub5.unsubscribe();
+        // this.sub1.unsubscribe()
     }
 
     ngOnInit() {

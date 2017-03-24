@@ -11,6 +11,7 @@ import {CreateComponent} from "./create/create.component";
 import {TransformComponent} from "./transform/transform.component";
 import {FilterComponent} from "./filter/filter.component";
 import {ComposeComponent} from "./compose/compose.component";
+import {ErrorComponent} from "./error/error.component";
 
 
 @Component({
@@ -29,9 +30,10 @@ export class RxComponent implements AfterViewInit,OnInit {
         {label: 'transform', content: TransformComponent},
         {label: 'filter', content: FilterComponent},
         {label: 'compose', content: ComposeComponent},
+        {label: 'error', content: ErrorComponent},
     ];
 
-    activeIndex: string|number = 6;
+    activeIndex: string|number = 0;
 
     @ViewChildren(VHostDirective) vHosts: QueryList<any>;
 
