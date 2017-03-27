@@ -11,15 +11,16 @@ import {ConfirmService} from "../shared/comfirm/confirm.service";
 import {MyErrorHandler} from "./my-error-handler";
 import {ResourceModule} from "../resource/resource.module";
 import {PagesModule} from "../pages/pages.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
     imports: [
         PagesModule,
-        ResourceModule
+        ResourceModule,
+       // BrowserAnimationsModule,
     ],
     providers: [
-        StateService,
         MenuConfigService,
         UserResolveService,
         StateService,
