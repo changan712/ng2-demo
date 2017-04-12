@@ -1,5 +1,5 @@
 import {NgModule, Optional, SkipSelf, ErrorHandler} from '@angular/core';
-import { LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {StateService} from "./state.service";
 import {MenuConfigService} from "./menu-config";
 import {MyRequestOptions} from "./my-request-options";
@@ -18,7 +18,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     imports: [
         PagesModule,
         ResourceModule,
-       // BrowserAnimationsModule,
+        BrowserAnimationsModule,
     ],
     providers: [
         MenuConfigService,
