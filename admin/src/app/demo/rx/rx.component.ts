@@ -12,6 +12,7 @@ import {TransformComponent} from "./transform/transform.component";
 import {FilterComponent} from "./filter/filter.component";
 import {ComposeComponent} from "./compose/compose.component";
 import {ErrorComponent} from "./error/error.component";
+import {GithubUsersComponent} from "./github-users/github-users.component";
 
 
 @Component({
@@ -31,6 +32,7 @@ export class RxComponent implements AfterViewInit,OnInit {
         {label: 'filter', content: FilterComponent},
         {label: 'compose', content: ComposeComponent},
         {label: 'error', content: ErrorComponent},
+        {label: 'github', content: GithubUsersComponent},
     ];
 
     activeIndex: string|number = 0;
@@ -68,6 +70,7 @@ export class RxComponent implements AfterViewInit,OnInit {
 
 
     addComponents(activeIndex) {
+        //dynamic components;
         let componentFactory = this.componentFactoryResolver.resolveComponentFactory(<any>this.tabs[activeIndex].content);
         let viewContainerRef = this.vHosts.toArray()[activeIndex].viewContainerRef;
         viewContainerRef.clear();

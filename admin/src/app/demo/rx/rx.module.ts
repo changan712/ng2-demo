@@ -11,6 +11,7 @@ import {TransformComponent} from './transform/transform.component';
 import { FilterComponent } from './filter/filter.component';
 import { ComposeComponent } from './compose/compose.component';
 import { ErrorComponent } from './error/error.component';
+import {GithubUsersComponent} from "./github-users/github-users.component";
 
 @NgModule({
     imports: [
@@ -26,6 +27,7 @@ import { ErrorComponent } from './error/error.component';
         FilterComponent,
         ComposeComponent,
         ErrorComponent,
+        GithubUsersComponent
     ],
     declarations: [
         BasicComponent,
@@ -37,6 +39,7 @@ import { ErrorComponent } from './error/error.component';
         FilterComponent,
         ComposeComponent,
         ErrorComponent,
+        GithubUsersComponent,
     ]
 })
 export class RxModule {
