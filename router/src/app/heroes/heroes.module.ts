@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroListComponent } from './hero-list/hero-list.component';
-import { HeroList,heroDetailComponent } from './hero-list,hero-detail/hero-list,hero-detail.component';
+
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
@@ -11,6 +11,6 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     CommonModule,
     HeroesRoutingModule
   ],
-  declarations: [HeroListComponent, HeroList,heroDetailComponent, HeroDetailComponent]
+  declarations: [HeroListComponent,  HeroDetailComponent]
 })
 export class HeroesModule { }

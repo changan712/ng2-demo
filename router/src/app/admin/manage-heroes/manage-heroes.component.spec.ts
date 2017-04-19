@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ManageHeresComponent } from './manage-heres.component';
+import { ManageHeresComponent } from './manage-heroes.component';
 
 describe('ManageHeresComponent', () => {
   let component: ManageHeresComponent;
