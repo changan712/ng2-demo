@@ -37,10 +37,14 @@ export const routes: Routes = [
             {
                 path: 'object',
                 component: ObjectComponent,
-            },
-            {
+                },
+                {
                 path: 'rx',
                 loadChildren: 'app/demo/rx/rx.module#RxModule'
+            },
+            {
+                path: 'imooc',
+                loadChildren: 'app/demo/imooc/imooc.module#ImoocModule'
             },
         ]
     },

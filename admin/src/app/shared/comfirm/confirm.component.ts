@@ -14,7 +14,7 @@ export class ConfirmComponent {
      options: ConfirmOption ;
 
     constructor( private dialogRef: MdDialogRef<ConfirmComponent>) {
-        this.options = dialogRef.config.data;
+       // this.options = dialogRef.config.data;
        // console.log(this.options);
         
     }
