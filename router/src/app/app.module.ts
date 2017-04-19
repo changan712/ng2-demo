@@ -9,6 +9,7 @@ import {ComposeMessageComponent} from './compose-message.component';
 import {NotFoundComponent} from './not-found.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {LoginRoutingModule} from "./login-routing.module";
+import {HeroesModule} from "./heroes/heroes.module";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {LoginRoutingModule} from "./login-routing.module";
         BrowserModule,
         FormsModule,
         HttpModule,
+        HeroesModule,
         LoginRoutingModule,
         AppRoutingModule,
 

@@ -1,3 +1,11 @@
-<p>
-  hero-list works!
-</p>
+<h2>HEROES</h2>
+<ul class="items">
+    <li *ngFor="let hero of heroes | async"
+        [class.selected]="isSelected(hero)"
+        (click)="onSelect(hero)">
+
+        <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+    </li>
+</ul>
+
+<button routerLink="/sidekicks">Go to sidekicks</button>

@@ -3,11 +3,11 @@ import {PreloadingStrategy, Route} from "@angular/router";
 import {Observable} from "rxjs";
 @Injectable()
 export class SelectivePreloadingStrategy implements PreloadingStrategy {
-    preloadModules: Array<string> = [];
+    preloadMds: Array<string> = [];
 
     preload(route: Route, load: ()=>Observable<any>): Observable<any> {
         if (route.data && route.data['preload']) {
-            this.preloadModules.push(route.path);
+            this.preloadMds.push(route.path);
             console.log('Preloaded: ' + route.path);
 
             return load();

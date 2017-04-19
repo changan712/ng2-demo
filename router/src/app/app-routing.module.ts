@@ -3,6 +3,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {ComposeMessageComponent} from "./compose-message.component";
 import {NotFoundComponent} from "./not-found.component";
 import {AuthGuard} from "./auth.guard";
+import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
 
 
 const routes: Routes = [
@@ -27,8 +28,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes, {preloadingStrategy: SelectivePreloadingStrategy})],
+    exports: [RouterModule],
+    providers:[SelectivePreloadingStrategy]
 })
 export class AppRoutingModule {
 }
