@@ -6,10 +6,12 @@ import {HeroListComponent} from './hero-list/hero-list.component';
 
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import {HeroService} from "./hero.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         HeroesRoutingModule
     ],
     providers: [HeroService],

@@ -10,6 +10,7 @@ import {NotFoundComponent} from './not-found.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {LoginRoutingModule} from "./login-routing.module";
 import {HeroesModule} from "./heroes/heroes.module";
+import {DialogService} from "./dialog.service";
 
 
 @NgModule({
@@ -27,9 +28,8 @@ import {HeroesModule} from "./heroes/heroes.module";
         HeroesModule,
         LoginRoutingModule,
         AppRoutingModule,
-
     ],
-    providers: [],
+    providers: [DialogService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
