@@ -2,7 +2,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
 
 import {ImoocComponent} from "./imooc.component";
-import {DemoRouterComponent} from "./demo-router/demo-router.component";
+import {ViewChildrenComponent} from "./view-children/view-children.component";
 
 
 export const routes: Routes = [
@@ -12,11 +12,11 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                redirectTo: 'router',
+                redirectTo: 'view-children',
             },
             {
-                path: 'router',
-                component: DemoRouterComponent,
+                path: 'view-children',
+                component: ViewChildrenComponent,
             }
         ]
 

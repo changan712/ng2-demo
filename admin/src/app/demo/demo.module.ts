@@ -12,6 +12,7 @@ import {AdDirective} from "./dc/ad.directive";
 import {DcComponent} from "./dc/dc.component";
 import {DecoratorComponent} from "./decorator/decorator.component";
 import { ObjectComponent } from './object/object.component';
+import { UploadComponent } from './upload/upload.component';
 
 
 
@@ -25,7 +26,7 @@ import { ObjectComponent } from './object/object.component';
     entryComponents:[
 
     ],
-    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,DecoratorComponent,AdDirective, ObjectComponent]
+    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,DecoratorComponent,AdDirective, ObjectComponent, UploadComponent]
 })
 export class DemoModule {
 

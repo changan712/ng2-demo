@@ -8,19 +8,23 @@ import {DcComponent} from "./dc/dc.component";
 import {DecoratorComponent} from "./decorator/decorator.component";
 import {ObjectComponent} from "./object/object.component";
 import {RxComponent} from "./rx/rx.component";
+import {UploadComponent} from "./upload/upload.component";
 
 export const routes: Routes = [
     {
         path: '',
+
         component: DemoComponent,
         children: [
-            {
-                path: 'index',
-                component: IndexComponent
-            },
+
             {
                 path: 'fp',
                 component: FpComponent
+            },
+            {
+                path: '',
+                pathMatch:'full',
+                redirectTo:'fp',
             },
             {
                 path: 'poll',
@@ -37,11 +41,16 @@ export const routes: Routes = [
             {
                 path: 'object',
                 component: ObjectComponent,
-                },
-                {
+            },
+            {
+                path: 'upload',
+                component: UploadComponent,
+            },
+            {
                 path: 'rx',
                 loadChildren: 'app/demo/rx/rx.module#RxModule'
             },
+
             {
                 path: 'imooc',
                 loadChildren: 'app/demo/imooc/imooc.module#ImoocModule'

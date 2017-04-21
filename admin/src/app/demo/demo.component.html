@@ -1,2 +1,13 @@
 <app-navbar></app-navbar>
+
+<div class="p">
+    <div class="con p">
+        <a md-raised-button class="link"   routerLinkActive="active" *ngFor="let name  of list"
+           [routerLink]="['./',name]">
+            {{name}}
+        </a>
+    </div>
+
+</div>
 <router-outlet></router-outlet>
+
