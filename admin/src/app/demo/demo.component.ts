@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLinkActive, Router, RouterState} from "@angular/router";
 
-const DEMO_CHILDREN = ['poll', 'fp', 'dc', 'decorator', 'object', 'rx', 'imooc'];
+const DEMO_CHILDREN = ['poll', 'fp', 'dc', 'decorator', 'object', 'rx', 'imooc','upload'];
 
 @Component({
     selector: 'app-demo',
