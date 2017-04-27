@@ -8,8 +8,6 @@ import {ConfirmComponent} from "./comfirm/confirm.component";
 import {Ng2PaginationModule} from "ng2-pagination";
 import {VHostDirective} from './v-host/v-host.directive';
 
-
-
 @NgModule({
     imports: [
         CommonModule,

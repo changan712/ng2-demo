@@ -6,10 +6,12 @@ import {SharedModule} from "../shared/shared.module";
 
 
 
+
 @NgModule({
     imports: [
         SharedModule,
-        routing
+        routing,
+
     ],
     declarations: [PagesComponent]
 })

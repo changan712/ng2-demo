@@ -24,6 +24,7 @@
     "@angular/router": "^4.0.2",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
+    "ng2-file-upload": "^1.2.1",
     "ng2-pagination": "^2.0.1",
     "rxjs": "^5.3.0",
     "zone.js": "^0.8.5"

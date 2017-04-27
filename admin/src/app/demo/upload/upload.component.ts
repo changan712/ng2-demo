@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Http} from "@angular/http";
+import {FileUploader} from "ng2-file-upload";
 
 @Component({
     selector: 'app-upload',
@@ -7,6 +8,8 @@ import {Http} from "@angular/http";
     styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent implements OnInit {
+    private URL: string = '/';
+    uploader: FileUploader = new FileUploader({url: this.URL});
 
     constructor(private http: Http) {
     }
@@ -15,8 +18,7 @@ export class UploadComponent implements OnInit {
     }
 
     onSubmit() {
-        let formData:FormData = new FormData();
-        
+        this.uploader.uploadAll();
 
     }
 

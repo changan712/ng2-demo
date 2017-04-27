@@ -1,5 +1,16 @@
 <div class="p">
 
-    <button md-raised-button (click)="onSubmit()">submit</button>
+    <input type="file" ng2FileSelect [uploader]="uploader" multiple >
+
+    <button md-raised-button (click)="onSubmit()" >submit</button>
 
 </div>
+
+
+
+<ul>
+    <li  *ngFor="let item of uploader.queue">
+
+        {{$index}}{{item}}
+    </li>
+</ul>

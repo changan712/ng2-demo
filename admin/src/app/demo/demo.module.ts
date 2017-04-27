@@ -13,6 +13,7 @@ import {DcComponent} from "./dc/dc.component";
 import {DecoratorComponent} from "./decorator/decorator.component";
 import { ObjectComponent } from './object/object.component';
 import { UploadComponent } from './upload/upload.component';
+import {FileUploadModule} from "ng2-file-upload";
 
 
 
@@ -20,6 +21,7 @@ import { UploadComponent } from './upload/upload.component';
     imports: [
         SharedModule,
         DynamicFormModule,
+        FileUploadModule,
         routing,
 
     ],
