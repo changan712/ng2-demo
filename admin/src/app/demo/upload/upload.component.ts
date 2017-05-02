@@ -8,13 +8,19 @@ import {FileUploader} from "ng2-file-upload";
     styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent implements OnInit {
-    private URL: string = '/';
+    private URL: string = '/upload/upload';
     uploader: FileUploader = new FileUploader({url: this.URL});
 
     constructor(private http: Http) {
     }
 
     ngOnInit() {
+
+        this.http.get(this.URL).subscribe((res)=>{
+            console.log(res);
+
+        })
+
     }
 
     onSubmit() {
