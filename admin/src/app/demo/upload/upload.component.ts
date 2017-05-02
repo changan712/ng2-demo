@@ -8,6 +8,8 @@ import {FileUploader} from "ng2-file-upload";
     styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent implements OnInit {
+
+    //todo 暂无服务端支持
     private URL: string = '/upload/upload';
     uploader: FileUploader = new FileUploader({url: this.URL});
 
