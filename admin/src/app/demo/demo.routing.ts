@@ -9,6 +9,7 @@ import {DecoratorComponent} from "./decorator/decorator.component";
 import {ObjectComponent} from "./object/object.component";
 import {RxComponent} from "./rx/rx.component";
 import {UploadComponent} from "./upload/upload.component";
+import {WsComponent} from "./ws/ws.component";
 
 export const routes: Routes = [
     {
@@ -23,8 +24,8 @@ export const routes: Routes = [
             },
             {
                 path: '',
-                pathMatch:'full',
-                redirectTo:'fp',
+                pathMatch: 'full',
+                redirectTo: 'fp',
             },
             {
                 path: 'poll',
@@ -45,6 +46,9 @@ export const routes: Routes = [
             {
                 path: 'upload',
                 component: UploadComponent,
+            }, {
+                path: 'ws',
+                component: WsComponent,
             },
             {
                 path: 'rx',

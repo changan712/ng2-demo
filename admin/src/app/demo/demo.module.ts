@@ -14,8 +14,7 @@ import {DecoratorComponent} from "./decorator/decorator.component";
 import { ObjectComponent } from './object/object.component';
 import { UploadComponent } from './upload/upload.component';
 import {FileUploadModule} from "ng2-file-upload";
-
-
+import { WsComponent } from './ws/ws.component';
 
 @NgModule({
     imports: [
@@ -28,7 +27,7 @@ import {FileUploadModule} from "ng2-file-upload";
     entryComponents:[
 
     ],
-    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,DecoratorComponent,AdDirective, ObjectComponent, UploadComponent]
+    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent,DcComponent,DecoratorComponent,AdDirective, ObjectComponent, UploadComponent, WsComponent]
 })
 export class DemoModule {
 

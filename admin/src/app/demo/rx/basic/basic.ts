@@ -5,7 +5,7 @@ export class Observable {
 
     subscribe(observer:Observer) {
         this._generator.call(this, observer)
-    }
+    }   
 }
 
 

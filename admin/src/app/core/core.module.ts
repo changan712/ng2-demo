@@ -12,6 +12,7 @@ import {MyErrorHandler} from "./my-error-handler";
 import {ResourceModule} from "../resource/resource.module";
 import {PagesModule} from "../pages/pages.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {WsService} from "./ws.service";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         UserResolveService,
         StateService,
         ConfirmService,
+        WsService,
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         /*     {provide: ErrorHandler, useClass: MyErrorHandler},*/
         {provide: RequestOptions, useClass: MyRequestOptions}
