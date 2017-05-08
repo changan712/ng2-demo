@@ -21,11 +21,9 @@ export class WsComponent implements OnInit {
 
     }
 
-    subscribe() {
+    toggleSubscribe() {
         this.wsService.createSocket('ws://localhost:4300', new Date().getTime())
             .map(data => {
-
-
                 return data;
                 //  return  Number(data).toFixed(2);
             })
