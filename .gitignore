@@ -5,3 +5,7 @@ module-demo/node_modules/
 /admin/node_modules/
 /admin2/
 /ws/node_modules/
+/ws/dist/
+/ws/src/db.config.ts
+
+/app-test/node_modules/

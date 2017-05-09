@@ -7,7 +7,6 @@ const wsServer = new Server({
 });
 
 const list = [];
-
 wsServer.on('connection', (ws) => {
 
     
@@ -23,10 +22,7 @@ setInterval(() => {
     list.forEach(ws => {
         ws.send(Math.random() * 5);
     })
-}, 5000);
-
-
-
+},2000);
 
 
 

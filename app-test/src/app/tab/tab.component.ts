@@ -2,14 +2,16 @@ import {Component} from "@angular/core";
 import {HomeComponent} from "../home/home.component";
 import {UserService} from "../core/user.service";
 import {FeedListComponent} from "../feed/feed-list/feed-list.component";
-import {Nav, DeepLinker} from "ionic-angular";
+
+
 
 
 export const TAB_URL_CONFIG = {
     '/app/home': 0,
     '/app/feed': 1
 };
-
+/*
+ @IonicPage()*/
 @Component({
     selector: 'app-tab',
     templateUrl: './tab.component.html',
@@ -25,14 +27,14 @@ export class TabComponent {
     root2 = FeedListComponent;
     root3 = HomeComponent;
 
-    constructor(private userSv: UserService, private deepLinker: DeepLinker) {
+    constructor(private userSv: UserService, private nav: Nav) {
 
 
     }
 
     ngOnInit() {
-        let path = this.deepLinker._location.path();
-        this.indexActive = this.getTabIndex(path);
+
+        this.indexActive = this.getTabIndex();
 
     }
 
