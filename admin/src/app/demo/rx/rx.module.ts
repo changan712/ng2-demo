@@ -27,7 +27,7 @@ import {GithubUsersComponent} from "./github-users/github-users.component";
         FilterComponent,
         ComposeComponent,
         ErrorComponent,
-        GithubUsersComponent
+
     ],
     declarations: [
         BasicComponent,
@@ -39,7 +39,7 @@ import {GithubUsersComponent} from "./github-users/github-users.component";
         FilterComponent,
         ComposeComponent,
         ErrorComponent,
-        GithubUsersComponent,
+
     ]
 })
 export class RxModule {

@@ -1,0 +1,41 @@
+<div class="p">
+    <a md-button md-raised-button href="https://angular.cn/docs/ts/latest/guide/reactive-forms.html">api</a>
+    <h2>响应式表单</h2>
+
+    <div class="p">
+        <div [formGroup]="formModel">
+            <input type="text" formControlName="name">
+
+            <div class="m-t">
+                <input type="checkbox" formControlName="state">
+
+            </div>
+
+
+            <ul formArrayName="products">
+                <li  *ngFor="let item of formModel.get('products').controls; index as j">
+                    <input type="text" [formControlName]="j">
+                </li>
+            </ul>
+
+            <hr>
+
+            <app-friends  [model]="formModel.get('friends')"></app-friends>
+
+            <div formGroupName="address" class="m-t">
+                <input type="text" formControlName="a">
+                <input type="text" formControlName="b">
+            </div>
+        </div>
+
+    </div>
+
+    <p>
+        {{formModel.value|json}}
+
+    </p>
+</div>
+
+<div class="gray">
+        formGroupName  formArrayName 的真正作用是给 dom一个上下文 ？？
+</div>

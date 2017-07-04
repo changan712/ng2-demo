@@ -3,6 +3,8 @@ import {NgModule} from '@angular/core';
 import {PagesComponent} from "./pages.component";
 import {routing} from "./pages.routing";
 import {SharedModule} from "../shared/shared.module";
+import {MenuComponent} from "./menu/menu.component";
+
 
 
 
@@ -13,7 +15,7 @@ import {SharedModule} from "../shared/shared.module";
         routing,
 
     ],
-    declarations: [PagesComponent]
+    declarations: [PagesComponent,MenuComponent,]
 })
 export class PagesModule {
 }

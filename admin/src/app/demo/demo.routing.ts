@@ -10,6 +10,7 @@ import {ObjectComponent} from "./object/object.component";
 import {RxComponent} from "./rx/rx.component";
 import {UploadComponent} from "./upload/upload.component";
 import {WsComponent} from "./ws/ws.component";
+import { FormComponent } from './form/form.component';
 
 export const routes: Routes = [
     {
@@ -17,16 +18,20 @@ export const routes: Routes = [
 
         component: DemoComponent,
         children: [
-
+            {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'form',
+            },
+            {
+                path: 'form',
+                component: FormComponent
+            },
             {
                 path: 'fp',
                 component: FpComponent
             },
-            {
-                path: '',
-                pathMatch: 'full',
-                redirectTo: 'fp',
-            },
+
             {
                 path: 'poll',
                 component: PollComponent

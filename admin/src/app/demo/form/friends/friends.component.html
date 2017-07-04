@@ -1,0 +1,7 @@
+
+
+<ul   [formGroup]="model"  *ngIf="model">
+    <li *ngFor="let item of model.controls;let i = index">
+        <input type="text" [formControlName]="i"  >
+    </li>
+</ul>
