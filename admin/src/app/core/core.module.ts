@@ -3,10 +3,8 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {StateService} from "./state.service";
 import {MenuConfigService} from "./menu-config";
 import {MyRequestOptions} from "./my-request-options";
-import {RequestOptions} from "@angular/http";
-
+import {RequestOptions, HttpModule} from "@angular/http";
 import {UserResolveService} from "./user-resolve.service";
-
 import {ConfirmService} from "../shared/comfirm/confirm.service";
 import {MyErrorHandler} from "./my-error-handler";
 import {ResourceModule} from "../resource/resource.module";
@@ -17,6 +15,7 @@ import {WsService} from "./ws.service";
 
 @NgModule({
     imports: [
+        HttpModule,
         PagesModule,
         ResourceModule,
         BrowserAnimationsModule,

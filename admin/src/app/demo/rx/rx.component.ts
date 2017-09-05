@@ -46,11 +46,7 @@ export class RxComponent implements AfterViewInit,OnInit {
 
     ngOnInit() {
        // console.log(this.aRoute);
-        
-        this.aRoute.fragment.subscribe(n => {
-            if (n)
-                this.activeIndex = parseInt(n);
-        })
+
     }
 
     selectChange(e) {
@@ -79,10 +75,16 @@ export class RxComponent implements AfterViewInit,OnInit {
 
 
     ngAfterViewInit() {
-        this.router.navigate([], <NavigationExtras>{
-            fragment: this.activeIndex
-        });
-        this.addComponents(this.activeIndex);
+        setTimeout(()=>{
+            this.aRoute.fragment.subscribe(n => {
+                if (n)
+                    this.activeIndex = parseInt(n);
+            });
+            this.router.navigate([], <NavigationExtras>{
+                fragment: this.activeIndex
+            });
+            this.addComponents(this.activeIndex);
+        })
 
     }
 
