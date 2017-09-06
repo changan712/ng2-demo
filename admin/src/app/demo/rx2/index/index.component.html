@@ -1,0 +1,25 @@
+<div class="p">
+
+    <md-card>
+        <h3>combineLatest</h3>
+        <input type="text" #input1>
+        <button md-button md-raised-button #btnAdd>add</button>
+
+    </md-card>
+
+    <md-card class="m-t">
+        <h3>zip</h3>
+        <div>
+            {{zipData|json}}
+        </div>
+
+    </md-card>
+    <md-card class="m-t">
+        <h3>clock</h3>
+        <div>
+            {{clock$|async|date:'yyyy-MM-dd hh:mm:ss'}}
+        </div>
+
+    </md-card>
+
+</div>

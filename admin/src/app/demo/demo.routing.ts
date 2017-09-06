@@ -59,6 +59,10 @@ export const routes: Routes = [
                 path: 'rx',
                 loadChildren: 'app/demo/rx/rx.module#RxModule'
             },
+            {
+                path: 'rx2',
+                loadChildren: 'app/demo/rx2/rx2.module#Rx2Module'
+            },
 
             {
                 path: 'imooc',
