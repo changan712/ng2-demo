@@ -18,6 +18,7 @@ import {WsComponent} from './ws/ws.component';
 import {FormComponent} from './form/form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { FriendsComponent } from './form/friends/friends.component';
+import { RxTodoComponent } from './rx-todo/rx-todo.component';
 
 @NgModule({
     imports: [
@@ -29,7 +30,7 @@ import { FriendsComponent } from './form/friends/friends.component';
 
     ],
     entryComponents: [],
-    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent, DcComponent, DecoratorComponent, AdDirective, ObjectComponent, UploadComponent, WsComponent, FormComponent, FriendsComponent]
+    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent, DcComponent, DecoratorComponent, AdDirective, ObjectComponent, UploadComponent, WsComponent, FormComponent, FriendsComponent, RxTodoComponent]
 })
 export class DemoModule {
 

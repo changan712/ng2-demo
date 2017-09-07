@@ -10,7 +10,8 @@ import {ObjectComponent} from "./object/object.component";
 import {RxComponent} from "./rx/rx.component";
 import {UploadComponent} from "./upload/upload.component";
 import {WsComponent} from "./ws/ws.component";
-import { FormComponent } from './form/form.component';
+import {FormComponent} from './form/form.component';
+import {RxTodoComponent} from "./rx-todo/rx-todo.component";
 
 export const routes: Routes = [
     {
@@ -58,6 +59,10 @@ export const routes: Routes = [
             {
                 path: 'rx',
                 loadChildren: 'app/demo/rx/rx.module#RxModule'
+            },
+            {
+                path: 'rx-todo',
+                component: RxTodoComponent,
             },
             {
                 path: 'rx2',
