@@ -6,7 +6,6 @@ import {SharedModule} from "../shared/shared.module";
 import {routing} from "./demo.routing";
 import {PollComponent} from "./poll/poll.component";
 import {IndexComponent} from "./index/index.component";
-import {RouterModule} from "@angular/router";
 import {DynamicFormModule} from "../shared/dynamic-form/dynamic-form.module";
 import {AdDirective} from "./dc/ad.directive";
 import {DcComponent} from "./dc/dc.component";
@@ -18,7 +17,6 @@ import {WsComponent} from './ws/ws.component';
 import {FormComponent} from './form/form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { FriendsComponent } from './form/friends/friends.component';
-import { RxTodoComponent } from './rx-todo/rx-todo.component';
 
 @NgModule({
     imports: [
@@ -30,7 +28,7 @@ import { RxTodoComponent } from './rx-todo/rx-todo.component';
 
     ],
     entryComponents: [],
-    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent, DcComponent, DecoratorComponent, AdDirective, ObjectComponent, UploadComponent, WsComponent, FormComponent, FriendsComponent, RxTodoComponent]
+    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent, DcComponent, DecoratorComponent, AdDirective, ObjectComponent, UploadComponent, WsComponent, FormComponent, FriendsComponent]
 })
 export class DemoModule {
 

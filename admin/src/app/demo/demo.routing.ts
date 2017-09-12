@@ -3,15 +3,12 @@ import {ModuleWithProviders} from "@angular/core";
 import {FpComponent} from "./fp/fp.component";
 import {DemoComponent} from "./demo.component";
 import {PollComponent} from "./poll/poll.component";
-import {IndexComponent} from "./index/index.component";
 import {DcComponent} from "./dc/dc.component";
 import {DecoratorComponent} from "./decorator/decorator.component";
 import {ObjectComponent} from "./object/object.component";
-import {RxComponent} from "./rx/rx.component";
 import {UploadComponent} from "./upload/upload.component";
 import {WsComponent} from "./ws/ws.component";
 import {FormComponent} from './form/form.component';
-import {RxTodoComponent} from "./rx-todo/rx-todo.component";
 
 export const routes: Routes = [
     {
@@ -62,7 +59,7 @@ export const routes: Routes = [
             },
             {
                 path: 'rx-todo',
-                component: RxTodoComponent,
+                loadChildren: 'app/demo/rx-todo/rx-todo.module#RxTodoModule'
             },
             {
                 path: 'rx2',
