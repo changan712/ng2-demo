@@ -1,0 +1,1 @@
+export   default class  Test{    static  a:number = 1;    b:number = 2;}

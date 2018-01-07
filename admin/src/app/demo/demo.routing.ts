@@ -9,6 +9,7 @@ import {ObjectComponent} from "./object/object.component";
 import {UploadComponent} from "./upload/upload.component";
 import {WsComponent} from "./ws/ws.component";
 import {FormComponent} from './form/form.component';
+import {TplFormComponent} from "./tpl-form/tpl-form.component";
 
 export const routes: Routes = [
     {
@@ -21,6 +22,11 @@ export const routes: Routes = [
                 pathMatch: 'full',
                 redirectTo: 'form',
             },
+            {
+                path:'tpl-form',
+                component:TplFormComponent
+            },
+
             {
                 path: 'form',
                 component: FormComponent

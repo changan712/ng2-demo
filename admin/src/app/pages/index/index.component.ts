@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Test from "./Test";
+import {logger} from "codelyzer/util/logger";
 
 @Component({
   selector: 'app-index',
@@ -10,6 +12,8 @@ export class IndexComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+       let test = new Test();
+      console.log(test);
   }
 
 }

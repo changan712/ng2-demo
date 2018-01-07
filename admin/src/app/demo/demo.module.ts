@@ -15,8 +15,9 @@ import {UploadComponent} from './upload/upload.component';
 import {FileUploadModule} from "ng2-file-upload";
 import {WsComponent} from './ws/ws.component';
 import {FormComponent} from './form/form.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FriendsComponent } from './form/friends/friends.component';
+import { TplFormComponent } from './tpl-form/tpl-form.component';
 
 @NgModule({
     imports: [
@@ -24,11 +25,13 @@ import { FriendsComponent } from './form/friends/friends.component';
         DynamicFormModule,
         FileUploadModule,
         ReactiveFormsModule,
+        FormsModule,
         routing,
 
     ],
     entryComponents: [],
-    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent, DcComponent, DecoratorComponent, AdDirective, ObjectComponent, UploadComponent, WsComponent, FormComponent, FriendsComponent]
+    declarations: [DemoComponent, FpComponent, PollComponent, IndexComponent, DcComponent,
+        DecoratorComponent, AdDirective, ObjectComponent, UploadComponent, WsComponent, FormComponent, FriendsComponent, TplFormComponent]
 })
 export class DemoModule {
 
